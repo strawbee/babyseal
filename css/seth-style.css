@@ -1,0 +1,25 @@
+/*Style Sheet ot Template #3 */
+
+#wrapper {
+  border: 2px dashed darkgreen;
+}
+
+nav {
+  border: 2px solid green;
+  background-color: #fff;
+  /*position: absolute;*/
+  /*top: 200px;*/
+  /*height: 200px;*/
+
+}
+
+nav li {
+  list-style: none;
+  background-color: #fff;
+}
+
+header {
+  border: 2px solid red;
+  /*float: left;*/
+  /*position: absolute;*/
+}
