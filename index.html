@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" \>
+    <title>Layout Generator</title>
+    <link rel="stylesheet" href="css/style.css" \>
+  </head>
+  <body>
+    <div id="wrapper">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Choose Layout</a></li>
+        </ul>
+      </nav>
+      <header>
+        <h1>Layout Generator</h1>
+        <p id="headerInstructions">Welcome to the layout generator. Choose your own design and receive your code. Let's get started!</p>
+      </header>
+
+      <section id="aboutUsSection">
+        <h2>About Us</h2>
+        <div id="aboutUsDiv">
+          <p>About Us</p>
+        </div>
+      </section>
+
+      <section id="templatesSection">
+        <h2>Template</h2>
+        <div id="templatesDiv">
+          <p id="templatesInstructions">Choose your template.</p>
+          <form id="templatesForm">
+            <input type="radio" name="templatesRadioButton" id="templates1" /><img id="templates1" src="http://via.placeholder.com/200x200/000" />
+
+            <input type="radio" name="templatesRadioButton" id="templates2" /><img id="templates2" src="http://via.placeholder.com/200x200/000" />
+
+            <input type="radio" name="templatesRadioButton" id="templates3" /><img id="templates3" src="http://via.placeholder.com/200x200/000" />
+
+            <input type="radio" name="templatesRadioButton" id="templates4" /><img id="templates4" src="http://via.placeholder.com/200x200/000" />
+
+            <button type="submit" id="applyTemplateButton">Apply Template</button>
+
+          </form>
+          <button id="templatesNextButton">Next Section</button>
+        </div>
+      </section>
+
+      <section id="colorsSection">
+        <h2>Colors</h2>
+        <div id="colorsDiv">
+          <p id="colorsInstructions">Choose your colors.</p>
+          <form id="colorsForm">
+            <label for="colors-backgroundColor">Background Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <label for="colors-headerBackground">Header Background Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <label for="colors-navBackground">Navigation Background Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <label for="colors-footerBackground">Footer Background Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <label for="colors-sectionBackground">Section Background Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <label for="colors-textColor">Text Color: </label>
+            <input type="text" id="colors-backgroundColor" />
+
+            <button type="submit" id="applyColorsButton">Apply Colors</button>
+          </form>
+
+          <button id="colorsPreviousButton">Previous Selection</button>
+          <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          &copy; Club babySeals 2017
+        </p>
+      </footer>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
