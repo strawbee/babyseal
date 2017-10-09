@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #36A7BC;
+  font-family: Raleway, sans-serif;
+  font-weight: 100;
+  color: #FFF;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+a:hover {
+  cursor: default;
+}
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#4ec3d8, #07a4c1) fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #000;
+  text-align: center;
+  box-shadow: 0 3px 1px #005868;
+  z-index: 1;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 30px 45px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 2px #005868;
+}
+
+nav li:hover {
+  background: #005868;
+}
+
+header {
+  max-width: 80%;
+  height: 200px;
+  line-height: 2em;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow: 3px 3px 3px #057287;
+  padding-bottom: 30px;
+}
+
+header p {
+  text-shadow: 2px 2px 3px #057287;
+}
+
+header #headerNext {
+  text-align: right;
+}
+
+p a {
+  color: #dcf2f7;
+}
+
+p a:hover {
+  color: #fff;
+  cursor: default;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  text-align: center;
+  color: #e6eced;
+  text-shadow: 1px 1px 1px #005868;
+  box-shadow: 0 -2px 1px #005868;
+  padding: 20px;
+  z-index: 1;
+}
+
+#aboutUsSection, #templatesSection, #colorsSection {
+  display: none;
+}
