@@ -1,0 +1,49 @@
+* {
+
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+}
+
+nav {
+  display: inline-block;
+  width: 30%;
+  float: right;
+}
+
+header {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+  float: left;
+}
+
+section {
+  display: inline-block;
+  width: 70%;
+  float: left;
+}
+
+h1 {
+
+}
+ h2 {
+
+ }
+
+ footer {
+   display: block;
+   clear: both;
+ }
+
+ #wrapper {
+   width: 960px;
+   border: solid 1px;
+
+ }
