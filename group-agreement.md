@@ -1,4 +1,4 @@
-#Team babySeal Group Agreement
+#Club babySeal Group Agreement
 ##Communication plan:
 ###Methods:
 Slack Direct Message as group
