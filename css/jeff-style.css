@@ -1,5 +1,5 @@
 * {
-
+background-color: ;
 }
 
 html {
@@ -9,37 +9,57 @@ html {
 }
 
 body {
+  border: solid red 1px;
+  background-color: ;
+
 }
 
 nav {
+  margin-right: 10%;
+  padding-top: 200px;
   display: inline-block;
-  width: 30%;
+  width: 19%;
   float: right;
+  font-size: 18px;
+  border: solid orange 1px;
 }
 
 header {
+  margin-top: 50px;
+  margin-left: 21%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline-block;
-  width: 70%;
+  width: 48%;
   text-align: center;
   float: left;
+  border: solid 1px;
+  font-size: 22px;
 }
 
 section {
+  margin-left: 21%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline-block;
-  width: 70%;
+  width: 48%;
   float: left;
+  border: solid green 2px;
+
 }
 
 h1 {
-
+  font-size: 36px;
 }
  h2 {
-
+   font-size: 22px;
  }
 
  footer {
    display: block;
    clear: both;
+   border: solid 1px;
+
  }
 
  #wrapper {
@@ -47,3 +67,13 @@ h1 {
    border: solid 1px;
 
  }
+
+#templatesSection {
+  background-color: ;
+  margin-left: 21%;
+  width: 48%;
+}
+
+#applyTemplateButton {
+
+}
