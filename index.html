@@ -42,10 +42,10 @@
 
             <input type="radio" name="templatesRadioButton" id="templates4" /><img id="templates4" src="http://via.placeholder.com/200x200/000" />
 
-            <button type="submit" id="applyTemplateButton">Apply Template</button>
-
+            <div class="pageBottomButtons">
+              <button type="submit" id="applyTemplateButton">Apply Template</button><button id="templatesNextButton">Next Section</button>
+            </div>
           </form>
-          <button id="templatesNextButton">Next Section</button>
         </div>
       </section>
 
@@ -53,6 +53,28 @@
         <h2>Colors</h2>
         <div id="colorsDiv">
           <p id="colorsInstructions">Choose your colors.</p>
+          <form id="colorsForm">
+            <input type="radio" name="colorsRadioButton" id="colorsDefault" /><label for="colorsDefault">Default</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsRed" /><label for="colorsRed">Red</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsOrange" /><label for="colorsOrange">Orange</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsYellow" /><label for="colorsYellow">Yellow</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsGreen" /><label for="colorsGreen">Green</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsBlue" /><label for="colorsBlue">Blue</label>
+
+            <input type="radio" name="colorsRadioButton" id="colorsPurple" /><label for="colorsPurple">Purple</label>
+
+            <div class="pageBottomButtons">
+              <button type="submit" id="applyColorsButton">Apply Colors</button>
+              <button id="colorsPreviousButton">Previous Selection</button>
+              <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
+            </div>
+          </form>
+<!--
           <form id="colorsForm">
             <label for="colors-backgroundColor">Background Color: </label>
             <input type="text" id="colors-backgroundColor" />
@@ -72,11 +94,13 @@
             <label for="colors-textColor">Text Color: </label>
             <input type="text" id="colors-backgroundColor" />
 
-            <button type="submit" id="applyColorsButton">Apply Colors</button>
+            <div class="pageBottomButtons">
+              <button type="submit" id="applyColorsButton">Apply Colors</button>
+              <button id="colorsPreviousButton">Previous Selection</button>
+              <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
+            </div>
           </form>
-
-          <button id="colorsPreviousButton">Previous Selection</button>
-          <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
+-->
         </div>
       </section>
 
