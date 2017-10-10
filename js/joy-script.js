@@ -105,6 +105,7 @@ chooseLayoutLink.addEventListener('click', loadTemplates);
 document.getElementById('headerNext').addEventListener('click', loadTemplates);
 document.getElementById('templatesNextButton').addEventListener('click', templatesNext);
 document.getElementById('colorsPreviousButton').addEventListener('click', colorsPrevious);
+document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
 // Other Event Listeners
 document.getElementById('colorsForm').addEventListener('submit', applyColors);
