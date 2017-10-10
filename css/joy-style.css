@@ -31,6 +31,8 @@ a:hover {
   height: 100%;
   width: 100%;
   background: linear-gradient(#4ec3d8, #07a4c1) fixed;
+  /*background: url("../images/joy-bgs/default.jpg") fixed;*/
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +47,7 @@ nav {
   width: 260px;
   background: #000;
   text-align: center;
-  box-shadow: 0 3px 1px #057287;
+  box-shadow: 0 3px 1px #222;
   z-index: 2;
 }
 
@@ -62,7 +64,7 @@ nav li {
   padding: 30px 58px;
   background: #000;
   font-size: 1.2em;
-  text-shadow: 2px 2px 2px #057287;
+  text-shadow: 2px 2px 2px #333;
   transition: background 1s;
 }
 
@@ -73,8 +75,8 @@ nav li:hover {
 
 header {
   display: block;
-  margin: 30px 0 30px 290px;
-  padding-right: 30px;
+  margin: 30px 30px 30px 290px;
+  padding: 30px;
   line-height: 2em;
   text-align: center;
   cursor: default;
@@ -89,6 +91,11 @@ h1 {
   animation-name: h1-animation;
   animation-duration: 3s;
   transition: transform 1s;
+  white-space: nowrap;
+}
+
+h1:hover {
+  transform: translate(10px, 0);
 }
 
 @keyframes h1-animation {
@@ -96,12 +103,12 @@ h1 {
   to { opacity: 1; margin-right: 0; }
 }
 
-h1:hover {
-  transform: translate(10px, 0);
-}
-
 header p {
   text-shadow: 2px 2px 3px #057287;
+}
+
+header p a:hover {
+  cursor: auto;
 }
 
 header #headerNext {
@@ -112,11 +119,14 @@ header #headerNext {
 
 section {
   position: relative;
-  margin: 30px 0 30px 290px;
-  padding-right: 30px;
+  margin: 30px 30px 30px 290px;
+  padding: 30px;
   line-height: 2em;
   text-shadow: 1px 1px 3px #057287;
   overflow: scroll;
+  border-radius: 20px;
+  /*background: #000;
+  opacity: 0.8;*/
 }
 
 h2 {
@@ -159,7 +169,7 @@ img:hover {
   width: 18%;
   height: auto;
   margin: 10px 30px 10px 10px;
-  box-shadow: 2px 2px 2px #057287;
+  box-shadow: 2px 2px 2px #333;
 }
 
 #templatesSection img:hover {
@@ -181,7 +191,7 @@ button:hover {
   border: solid 2px #ededed;
   background: #000;
   color: #fff;
-  box-shadow: 1px 1px 2px #057287;
+  box-shadow: 1px 1px 2px #333;
 }
 
 button:focus {
@@ -197,7 +207,7 @@ button:focus {
 }
 
 #colorsSection input {
-  margin: 30px 10px 30px 40px;
+  margin: 30px 10px 30px 0;
 }
 
 #colorsSection label {
@@ -216,7 +226,7 @@ input {
 }
 
 input:focus {
-  background: #057287;
+  background: #333;
   outline: 0;
 }
 
@@ -260,11 +270,11 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #057287;
+  background: #222;
   text-align: center;
   color: #fff;
-  text-shadow: 1px 1px 1px #057287;
-  box-shadow: 0 -1px 2px #ededed;
+  text-shadow: 1px 1px 1px #333;
+  box-shadow: 0 -1px 2px #333;
   padding: 20px 20px 20px 310px;
   z-index: 1;
   opacity: 0;
@@ -278,6 +288,11 @@ footer:hover {
 
 #templatesSection, #aboutUsSection, #colorsSection, #templatesInstructions, #colorsInstructions {
   display: none;
+}
+
+.nowrap {
+  white-space: nowrap;
+  margin: 0 20px;
 }
 
 @keyframes slide-down {
