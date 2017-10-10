@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: linear-gradient(white 5%, #85FF73 25%, #21E842 70%);
+  background: linear-gradient(white 2%, #85FF73 40%, #21E842 60%);
   font-family: Raleway;
   line-height: 2em;
   margin: auto;
@@ -20,7 +20,7 @@ nav {
   text-align: center;
   font-size: 18px;
   margin-top: 180px;
-  padding-left: 0;
+  padding-left: 5px;
   width: 21%;
 }
 
@@ -70,7 +70,8 @@ footer {
 }
 
 #aboutUsSection {
-  border-radius: 0 0 25px 25px;
+  border-radius: 25px;
+  margin-top: 20px;
 }
 #wrapper {
   margin: 50px auto 0 auto;
@@ -79,7 +80,7 @@ footer {
 
 #templatesSection {
   border-radius: 25px;
-  margin: 10px 0 10px 0;
+  margin-top: 20px;
 }
 
 #templatesInstructions {
@@ -100,8 +101,8 @@ footer {
 }
 
 #colorsSection {
-  border-radius: 25px 25px 0 0;
-  margin-top: 10px;
+  border-radius: 25px;
+  margin-top: 20px;
 }
 
 #colorsInstructions {
