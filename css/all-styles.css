@@ -1,0 +1,8 @@
+#wrapper {
+  animation-duration: 2s;
+}
+
+@keyframes change-template {
+  from { margin-top: -100%; }
+  to { margin-top: 0; }
+}

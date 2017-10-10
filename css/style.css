@@ -31,8 +31,7 @@ a:hover {
   height: 100%;
   width: 100%;
   background: linear-gradient(#4ec3d8, #07a4c1) fixed;
-  /*background: url("../images/joy-bgs/bg.jpg") fixed;
-  filter: hue-rotate(0deg);*/
+  /*background: url("../images/joy-bgs/yellow.jpg") fixed;*/
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -62,7 +61,7 @@ nav li {
   padding: 30px 45px;
   background: #000;
   font-size: 1.2em;
-  text-shadow: 2px 2px 2px #057287;
+  text-shadow: 2px 2px 2px #333;
   transition: background 1s;
 }
 
@@ -72,9 +71,8 @@ nav li:hover {
 
 header {
   display: block;
-  max-width: 90%;
-  margin: 30px 0 50px 5%;
-  padding: 30px 5% 30px 0;
+  margin: 110px 5% 80px 5%;
+  padding: 40px;
   line-height: 2em;
   text-align: center;
   cursor: default;
@@ -84,11 +82,12 @@ header {
 h1 {
   font-size: 3em;
   font-weight: 900;
-  text-shadow: 3px 3px 3px #057287;
+  text-shadow: 2px 2px 4px #057287;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
   animation-duration: 3s;
   transition: transform 1s;
+  white-space: nowrap;
 }
 
 h1:hover {
@@ -116,11 +115,14 @@ header #headerNext {
 
 section {
   position: relative;
-  margin: 80px 0 50px 5%;
-  padding: 30px 5% 30px 0;
+  margin: 110px 5% 80px 5%;
+  padding: 40px 50px;
   line-height: 2em;
   text-shadow: 1px 1px 3px #057287;
   overflow: scroll;
+  border-radius: 20px;
+  /*background: #000;
+    opacity: 0.8;*/
 }
 
 h2 {
@@ -128,7 +130,7 @@ h2 {
   font-weight: 900;
   text-align: center;
   padding-bottom: 40px;
-  text-shadow: 3px 3px 3px #057287;
+  text-shadow: 2px 2px 4px #057287;
   animation-name: h2-animation;
   animation-duration: 1.5s;
   transition: transform 1s;
@@ -163,7 +165,7 @@ img:hover {
   width: 18%;
   height: auto;
   margin: 10px 30px 10px 10px;
-  box-shadow: 2px 2px 2px #057287;
+  box-shadow: 1px 1px 2px #333;
 }
 
 #templatesSection img:hover {
@@ -185,7 +187,7 @@ button:hover {
   border: solid 2px #ededed;
   background: #000;
   color: #fff;
-  box-shadow: 1px 1px 2px #057287;
+  box-shadow: 1px 1px 2px #333;
 }
 
 button:focus {
@@ -201,7 +203,7 @@ button:focus {
 }
 
 #colorsSection input {
-  margin: 30px 10px 30px 40px;
+  margin: 30px 10px 30px 0;
 }
 
 #colorsSection label {
@@ -220,7 +222,7 @@ input {
 }
 
 input:focus {
-  background: #057287;
+  background: #333;
   outline: 0;
 }
 
@@ -267,8 +269,8 @@ footer {
   background: #000;
   text-align: center;
   color: #8c8c8c;
-  text-shadow: 1px 1px 1px #057287;
-  box-shadow: 0 -2px 1px #057287;
+  text-shadow: 1px 1px 1px #333;
+  box-shadow: 0 -2px 1px #333;
   padding: 20px;
   z-index: 1;
   transition: color 1s;
@@ -283,14 +285,19 @@ footer:hover {
   display: none;
 }
 
+.nowrap {
+  white-space: nowrap;
+  margin: 0 20px;
+}
+
 @keyframes slide-down {
   from { margin-top: -100%; }
-  to { margin-top: 80px; }
+  to { margin-top: 110px; }
 }
 
 @keyframes slide-left {
   from { margin-right: -200%; }
-  to { margin-right: 0; }
+  to { margin-right: 5%; }
 }
 
 @keyframes slide-right {
@@ -300,5 +307,5 @@ footer:hover {
 
 @keyframes slide-up {
   from { margin-bottom: -100%; }
-  to { margin-bottom: 50px; }
+  to { margin-bottom: 80px; }
 }
