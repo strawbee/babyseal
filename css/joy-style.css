@@ -79,18 +79,22 @@ header {
 }
 
 h1 {
-  overflow: hidden;
   font-size: 3em;
   font-weight: 900;
   text-shadow: 3px 3px 3px #057287;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
   animation-duration: 3s;
+  transition: transform 1s;
 }
 
 @keyframes h1-animation {
   from { opacity: 0; margin-right: 500px; }
   to { opacity: 1; margin-right: 0; }
+}
+
+h1:hover {
+  transform: translate(10px, 0);
 }
 
 header p {
@@ -104,19 +108,20 @@ header #headerNext {
 }
 
 p a {
-  color: #dcf2f7;
+  color: #eaeaea;
 }
 
 p a:hover {
   color: #fff;
-  cursor: default;
+  cursor: auto;
 }
 
 section {
+  position: relative;
   margin: 30px 0 30px 290px;
   padding-right: 30px;
   line-height: 2em;
-  position: relative;
+  text-shadow: 2px 2px 2px #057287;
   overflow: scroll;
 }
 
@@ -126,12 +131,25 @@ h2 {
   text-align: center;
   padding: 10px 0 40px 0;
   text-shadow: 3px 3px 3px #057287;
+  animation-name: h2-animation;
+  animation-duration: 1.5s;
+  transition: transform 1s;
+}
+
+@keyframes h2-animation {
+  from { margin-left: 500px; opacity: 0; }
+  to { margin-left: 0px; opacity: 1; }
+}
+
+h2:hover {
+  transform: translate(10px, 0);
 }
 
 img {
   border: solid 3px #fff;
   border-radius: 5px;
-  opacity: 0.9;
+  opacity: 0.8;
+  transition: opacity 1s;
 }
 
 img:hover {
@@ -166,7 +184,7 @@ button {
 }
 
 button:hover {
-  border: solid 2px #e6eced;
+  border: solid 2px #ededed;
   background: #000;
   color: #fff;
   box-shadow: 1px 1px 2px #057287;
@@ -208,20 +226,82 @@ input:focus {
   outline: 0;
 }
 
+.defaultColor {
+  color: #b3edff;
+}
+
+.red {
+  color: #ffb5c0;
+}
+
+.orange {
+  color: #ffdcb4;
+}
+
+.yellow {
+  color: #fffdb3;
+}
+
+.green {
+  color: #e4ffb3;
+}
+
+.blue {
+  color: #bfe8fc;
+}
+
+.purple {
+  color: #e6ccff;
+}
+
+.defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
+  color: #fff;
+}
+
+#aboutUsSection {
+  text-align: justify;
+}
+
 footer {
-  display: none;
   position: fixed;
   bottom: 0;
   width: 100%;
   background: #057287;
   text-align: center;
-  color: #e6eced;
+  color: #fff;
   text-shadow: 1px 1px 1px #057287;
-  box-shadow: 0 -1px 2px #86d6e4;
+  box-shadow: 0 -1px 2px #ededed;
   padding: 20px 20px 20px 310px;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+footer:hover {
+  cursor: default;
+  opacity: 1;
 }
 
 #templatesSection, #aboutUsSection, #colorsSection, #templatesInstructions, #colorsInstructions {
   display: none;
+}
+
+@keyframes slide-down {
+  from { margin-top: -100%; }
+  to { margin-top: 30px; }
+}
+
+@keyframes slide-left {
+  from { margin-right: -200%; }
+  to { margin-right: 0; }
+}
+
+@keyframes slide-right {
+  from { margin-left: -200%; }
+  to { margin-left: 290px; }
+}
+
+@keyframes slide-up {
+  from { margin-bottom: -100%; }
+  to { margin-bottom: 30px; }
 }
