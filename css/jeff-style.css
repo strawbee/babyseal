@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #ABDCFF;
+  background: linear-gradient(white 10%, #ABDCFF 50%);
   font-family: Raleway;
   line-height: 2em;
   margin: auto;
