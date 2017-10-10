@@ -1,6 +1,4 @@
-* {
-background-color: ;
-}
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 html {
   box-sizing: border-box;
@@ -9,71 +7,82 @@ html {
 }
 
 body {
-  border: solid red 1px;
-  background-color: ;
+  background: #ABDCFF;
+  font-family: Raleway;
+  line-height: 2em;
+  margin: auto;
 
 }
 
 nav {
-  margin-right: 10%;
-  padding-top: 200px;
+  background: #ABDCFF;
   display: inline-block;
-  width: 19%;
   float: right;
   font-size: 18px;
-  border: solid orange 1px;
+  padding-top: 150px;
+  padding-left: 5px;
+  width: 22%;
+}
+
+nav ul li {
+  padding: 5px;
 }
 
 header {
-  margin-top: 50px;
-  margin-left: 21%;
-  padding-top: 10px;
-  padding-bottom: 10px;
   display: inline-block;
-  width: 48%;
-  text-align: center;
   float: left;
-  border: solid 1px;
   font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  width: 74%;
 }
 
 section {
-  margin-left: 21%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background: white;
   display: inline-block;
-  width: 48%;
   float: left;
-  border: solid green 2px;
-
+  padding: 10px;
+  width: 74%;
 }
 
 h1 {
   font-size: 36px;
+  margin-bottom: 15px;
 }
  h2 {
    font-size: 22px;
- }
+}
 
- footer {
-   display: block;
-   clear: both;
-   border: solid 1px;
+footer {
+  background: #ABDCFF;
+  clear: both;
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  text-align: center;
+}
 
- }
-
- #wrapper {
-   width: 960px;
-   border: solid 1px;
-
- }
-
-#templatesSection {
-  background-color: ;
-  margin-left: 21%;
-  width: 48%;
+#aboutUsSection {
+  border-radius: 25px 25px 0 0;
+}
+#wrapper {
+  margin: 50px auto 0 auto;
+  width: 650px;
 }
 
 #applyTemplateButton {
+  margin: 5px;
+  padding: 5px;
+}
 
+#templatesNextButton {
+  margin: 5px;
+  padding: 5px;
+}
+#templatesForm {
+  padding: 2%;
+}
+
+#colorsSection {
+  border-radius: 0 0 25px 25px;
 }
