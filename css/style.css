@@ -55,8 +55,10 @@ nav ul {
 nav li {
   display: inline-block;
   padding: 30px 45px;
+  background: #000;
   font-size: 1.2em;
   text-shadow: 2px 2px 2px #057287;
+  transition: background 1s;
 }
 
 nav li:hover {
@@ -65,18 +67,27 @@ nav li:hover {
 
 header {
   max-width: 90%;
-  margin: 50px;
-  height: 200px;
+  margin: 30px 0 50px 5%;
+  padding: 30px 5% 30px 0;
   line-height: 2em;
   text-align: center;
   display: block;
+  cursor: default;
 }
 
 h1 {
+  overflow: hidden;
   font-size: 3em;
   font-weight: 900;
   text-shadow: 3px 3px 3px #057287;
-  padding-bottom: 30px;
+  padding: 10px 30px 30px 30px;
+  animation-name: h1-animation;
+  animation-duration: 3s;
+}
+
+@keyframes h1-animation {
+  from { opacity: 0; margin-right: 500px; }
+  to { opacity: 1; margin-right: 0; }
 }
 
 header p {
@@ -103,14 +114,14 @@ section {
   padding: 30px 5% 30px 0;
   position: relative;
   overflow: scroll;
-  line-height: 3em;
+  line-height: 2em;
 }
 
 h2 {
   font-size: 3em;
   font-weight: 900;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   text-shadow: 3px 3px 3px #057287;
 }
 
@@ -141,7 +152,7 @@ img:hover {
 }
 
 button {
-  margin: 20px 10px;
+  margin: 30px 10px 10px 10px;
   padding: 20px;
   font-size: 1.2em;
   border-radius: 10px;
@@ -209,4 +220,24 @@ footer {
 
 #colorsSection, #aboutUsSection, #templatesSection, #templatesInstructions, #colorsInstructions {
   display: none;
+}
+
+@keyframes slide-down {
+  from { margin-top: -100%; }
+  to { margin-top: 80px; }
+}
+
+@keyframes slide-left {
+  from { margin-right: -200%; }
+  to { margin-right: 0px; }
+}
+
+@keyframes slide-right {
+  from { margin-left: -200%; }
+  to { margin-left: 5%; }
+}
+
+@keyframes slide-up {
+  from { margin-bottom: -100%; }
+  to { margin-bottom: 50px; }
 }
