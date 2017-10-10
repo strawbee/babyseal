@@ -25,11 +25,17 @@ function openTab (evt, navTab) {
 //            EVENT HANDLERS
 //-----------------------------------------------------------
 
+//Teamplate loading is handled by script.js
+loadNewColor = function (e) {
 
+//take radio button selection and load the chosen color theme!
+
+
+}
 
 //-----------------------------------------------------------
 //            EVENT LISTENERS
 //-----------------------------------------------------------
 
 var oneEl = document.getElementById('applyTemplateButton');
-oneEl.addEventListener('click', Pictures.onClick);
+oneEl.addEventListener('click', loadNewTemplate);
