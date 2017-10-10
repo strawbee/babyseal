@@ -10,8 +10,10 @@
     <div id="wrapper">
       <header>
         <h1>Layout Generator</h1>
-        <p id="headerInstructions">Welcome to the layout generator. Choose your own design and receive your code.</p>
-        <p id="headerNext"><a id="headerNext" href="#">Let's get started!</a></p>
+        <div id="headerDiv">
+          <p id="headerInstructions">Welcome to the layout generator. Choose your own design and receive your code.</p>
+          <p id="headerNext"><a id="headerNextLink" href="#">> Let's get started! <</a></p>
+        </div>
       </header>
 
       <nav>
@@ -21,13 +23,6 @@
           <li id="chooseLayoutLink"><a href="#">Choose Layout</a></li>
         </ul>
       </nav>
-
-      <section id="aboutUsSection">
-        <h2>About Us</h2>
-        <div id="aboutUsDiv">
-          <p>About Us</p>
-        </div>
-      </section>
 
       <section id="templatesSection">
         <h2>Template</h2>
@@ -54,45 +49,19 @@
         <div id="colorsDiv">
           <p id="colorsInstructions">Choose your colors.</p>
           <form id="colorsForm">
-            <input type="radio" name="colorsRadioButton" id="colorsDefault" /><label for="colorsDefault">Default</label>
+            <input type="radio" name="colorsRadioButton" id="colorsDefault" /><label for="colorsDefault" class="defaultColor">Default</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsRed" /><label for="colorsRed">Red</label>
+            <input type="radio" name="colorsRadioButton" id="colorsRed" /><label for="colorsRed" class="red">Red</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsOrange" /><label for="colorsOrange">Orange</label>
+            <input type="radio" name="colorsRadioButton" id="colorsOrange" /><label for="colorsOrange" class="orange">Orange</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsYellow" /><label for="colorsYellow">Yellow</label>
+            <input type="radio" name="colorsRadioButton" id="colorsYellow" /><label for="colorsYellow" class="yellow">Yellow</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsGreen" /><label for="colorsGreen">Green</label>
+            <input type="radio" name="colorsRadioButton" id="colorsGreen" /><label for="colorsGreen" class="green">Green</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsBlue" /><label for="colorsBlue">Blue</label>
+            <input type="radio" name="colorsRadioButton" id="colorsBlue" /><label for="colorsBlue" class="blue">Blue</label>
 
-            <input type="radio" name="colorsRadioButton" id="colorsPurple" /><label for="colorsPurple">Purple</label>
-
-            <div class="pageBottomButtons">
-              <button type="submit" id="applyColorsButton">Apply Colors</button>
-              <button id="colorsPreviousButton">Previous Selection</button>
-              <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
-            </div>
-          </form>
-<!--
-          <form id="colorsForm">
-            <label for="colors-backgroundColor">Background Color: </label>
-            <input type="text" id="colors-backgroundColor" />
-
-            <label for="colors-headerBackground">Header Background Color: </label>
-            <input type="text" id="colors-backgroundColor" />
-
-            <label for="colors-navBackground">Navigation Background Color: </label>
-            <input type="text" id="colors-backgroundColor" />
-
-            <label for="colors-footerBackground">Footer Background Color: </label>
-            <input type="text" id="colors-backgroundColor" />
-
-            <label for="colors-sectionBackground">Section Background Color: </label>
-            <input type="text" id="colors-backgroundColor" />
-
-            <label for="colors-textColor">Text Color: </label>
-            <input type="text" id="colors-backgroundColor" />
+            <input type="radio" name="colorsRadioButton" id="colorsPurple" /><label for="colorsPurple" class="purple">Purple</label>
 
             <div class="pageBottomButtons">
               <button type="submit" id="applyColorsButton">Apply Colors</button>
@@ -100,7 +69,13 @@
               <a href="code.html" target="_blank"><button id="getCodeButton">Get Code</button></a>
             </div>
           </form>
--->
+        </div>
+      </section>
+
+      <section id="aboutUsSection">
+        <h2>About Us</h2>
+        <div id="aboutUsDiv">
+          <p>About Us</p>
         </div>
       </section>
 
