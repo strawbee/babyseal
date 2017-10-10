@@ -112,3 +112,8 @@ footer {
 .pageBottomButtons {
   text-align: center;
 }
+
+img {
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
