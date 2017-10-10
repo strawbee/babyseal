@@ -7,21 +7,36 @@ html {
 }
 
 body {
-  background: linear-gradient(white 2%, #85FF73 40%, #21E842 60%);
+  background: linear-gradient(#bb0000, #690000);
   font-family: Raleway;
   line-height: 2em;
   margin: auto;
+}
 
+a {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: white;
+  padding: 5px;
+  border-radius: 7px;
+  font-weight: 900;
+  font-size: 0.9em;
+}
+
+a:hover {
+  box-shadow: 2px 2px 2px #000;
+  background: #eee;
 }
 
 nav {
   display: inline-block;
   float: right;
-  text-align: center;
   font-size: 18px;
-  margin-top: 180px;
+  margin-top: 20px;
   padding-left: 5px;
-  width: 21%;
+  width: 26%;
+  color: white;
 }
 
 nav ul li {
@@ -34,39 +49,41 @@ header {
   font-size: 22px;
   padding: 10px;
   text-align: center;
-  width: 75%;
+  width: 71%;
+  color: white;
 }
 
-#headerDiv #headerInstructions {
-  text-shadow: 0 0 1px green;
+#headerInstructions {
+  text-shadow: 0 0 1px #630e0e;
+  margin-bottom: 20px;
 }
 
 section {
   background: white;
   display: inline-block;
   float: left;
-  padding: 10px;
-  width: 75%;
+  padding: 15px 10px;
+  width: 70%;
+  text-align: justify;
 }
 
 h1 {
   font-size: 36px;
   margin-bottom: 15px;
-  text-shadow: 0 0 1px green;
+  text-shadow: 0 0 1px 630e0e;
 }
  h2 {
-   font-size: 22px;
+   font-size: 2em;
    text-align: center;
 }
 
 footer {
-  background: #21E842;
   clear: both;
   display: block;
-  padding-top: 60px;
-  padding-bottom: 20px;
-  padding-right: 140px;
+  padding: 50px;
+  width: 421px;
   text-align: center;
+  color: #fff;
 }
 
 #aboutUsSection {
@@ -75,29 +92,40 @@ footer {
 }
 #wrapper {
   margin: 50px auto 0 auto;
-  width: 660px;
+  width: 720px;
 }
 
 #templatesSection {
   border-radius: 25px;
   margin-top: 20px;
+  text-align: left;
 }
 
 #templatesInstructions {
   text-align: center;
 }
 
-#applyTemplateButton {
-  margin: 5px;
-  padding: 5px;
+button {
+  padding: 10px;
+  margin: 15px 5px;
+  background: #fff;
+  border: solid 3px #000;
+  border-radius: 5px;
+  font-size: 1em;
 }
 
-#templatesNextButton {
-  margin: 5px;
-  padding: 5px;
+button:hover {
+  box-shadow: 2px 2px 2px #000;
+  background: #eee;
+  transform: translate(-1px, -1px)
 }
+
 #templatesForm {
-  padding: 3%;
+  padding: 2%;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 #colorsSection {
@@ -115,5 +143,58 @@ footer {
 
 img {
   vertical-align: middle;
-  margin-bottom: 10px;
+  margin: 0 10px 10px 3px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+img:hover {
+  box-shadow: 2px 2px 2px #000;
+  transform: translate(-1px, -1px)
+}
+
+.defaultColor {
+  color: #a31111;
+  margin-right: 82%;
+  margin-left: 3px;
+}
+
+.red {
+  color: #a31111;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.orange {
+  color: #ad5c00;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.yellow {
+  color: #6d7700;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.green {
+  color: #047c00;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.blue {
+  color: #005470;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.purple {
+  color: #54006d;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
+.defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
+  color: #000;
 }
