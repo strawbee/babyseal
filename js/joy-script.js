@@ -7,7 +7,7 @@ function goHome() {
   document.getElementById('aboutUsSection').style.display = 'none';
   document.querySelector('header').style.animationName = 'slide-up';
   document.querySelector('header').style.animationDuration = '1.5s';
-  document.getElementById('homeLink').style.backgroundColor = '#057287';
+  document.getElementById('homeLink').style.backgroundColor = '#333';
   document.getElementById('aboutUsLink').style.backgroundColor = '';
   document.getElementById('chooseLayoutLink').style.backgroundColor = '';
 }
@@ -20,7 +20,7 @@ function aboutUs() {
   document.getElementById('aboutUsSection').style.animationName = 'slide-up';
   document.getElementById('aboutUsSection').style.animationDuration = '1.5s';
   document.getElementById('homeLink').style.backgroundColor = '';
-  document.getElementById('aboutUsLink').style.backgroundColor = '#057287';
+  document.getElementById('aboutUsLink').style.backgroundColor = '#333';
   document.getElementById('chooseLayoutLink').style.backgroundColor = '';
 }
 
@@ -33,7 +33,7 @@ function loadTemplates() {
   document.getElementById('templatesSection').style.animationDuration = '1.5s';
   document.getElementById('homeLink').style.backgroundColor = '';
   document.getElementById('aboutUsLink').style.backgroundColor = '';
-  document.getElementById('chooseLayoutLink').style.backgroundColor = '#057287';
+  document.getElementById('chooseLayoutLink').style.backgroundColor = '#333';
 }
 
 function templatesNext() {
