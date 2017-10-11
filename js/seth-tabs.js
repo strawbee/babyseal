@@ -29,7 +29,10 @@ function openTab (evt, navTab) {
 loadNewColor = function (e) {
 
 //take radio button selection and load the chosen color theme!
-
+if (document.getElementById('colorsRed').checked = true) {
+  //change colors of DOM elements
+  
+}
 
 }
 
@@ -37,5 +40,5 @@ loadNewColor = function (e) {
 //            EVENT LISTENERS
 //-----------------------------------------------------------
 
-var oneEl = document.getElementById('applyTemplateButton');
-oneEl.addEventListener('click', loadNewTemplate);
+var oneEl = document.getElementById('applyColorsButton');
+oneEl.addEventListener('sumbit', loadNewColor);

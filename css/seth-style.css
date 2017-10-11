@@ -34,24 +34,16 @@ h1 {
     animation-delay: .5s;
 }
 
+h2 {
+  margin: 20px;
+}
+
 @-webkit-keyframes slide {
     100% { left: 0; }
 }
 
 @keyframes slide {
     100% { left: 50%; }
-}
-
-#templatesSection {
-  display: inline;
-}
-
-#colorsSection {
-  display: none;
-}
-
-#backgroundSection {
-  display: none;
 }
 
 nav {
@@ -126,6 +118,18 @@ nav .tab {
   text-align: center;
 }
 
+#templatesSection {
+  display: none;
+}
+
+#colorsSection {
+  display: inline;
+}
+
+#backgroundSection {
+  display: none;
+}
+
 .tabcontent {
     -webkit-animation: fadeEffect 1.5s;
     animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
@@ -145,6 +149,21 @@ nav .tab {
   white-space: nowrap;
   text-align: center;
   margin: 40px auto 0 auto;
+}
+
+#colorsDiv p {
+  margin: 20px;
+}
+
+#colorsForm {
+  display: inline;
+  white-space: nowrap;
+  /*text-align: center;*/
+  margin: 40px;
+}
+
+.nowrap {
+  margin: 20px;
 }
 
 #templatesSection img {
