@@ -129,7 +129,7 @@ function aboutUs() {
 
 // Nav: Choose Layout Link
 function loadTemplates() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
     templatesSection.style.display = 'block';
     header.style.display = 'none';
     colorsSection.style.display = 'none';
@@ -145,7 +145,7 @@ function loadTemplates() {
 
 // Button: going to colors section from the templates section
 function templatesNext() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
     colorsSection.style.display = 'block';
     templatesSection.style.display = 'none';
     colorsSection.style.animationName = 'slide-left';
@@ -155,7 +155,7 @@ function templatesNext() {
 
 // Button: going back to templates section from color section
 function colorsPrevious() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
     templatesSection.style.display = 'block';
     colorsSection.style.display = 'none';
     templatesSection.style.animationName = 'slide-right';
@@ -165,7 +165,7 @@ function colorsPrevious() {
 
 // Button: going to backgrounds section from color section
 function colorsNext() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
     colorsSection.style.display = 'none';
     backgroundsSection.style.display = 'block';
     backgroundsSection.style.animationName = 'slide-left';
@@ -175,7 +175,7 @@ function colorsNext() {
 
 // Button: going from backgrounds section back to color section
 function backgroundsPrevious() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
     colorsSection.style.display = 'block';
     backgroundsSection.style.display = 'none';
     colorsSection.style.animationName = 'slide-right';
