@@ -225,10 +225,10 @@ function applyColors(event) {
       sethChangeColor('#2E7C52', '#73AF8F');
     }
     if (activeTemplate === allTemplates[3]) {
-      jeffChangeColor('#000', '#111');
+      jeffChangeColor('#49494C', '#666F78');
     }
     joyStoreColor = ['#4ec3d8', '#07a4c1', '#057287'];
-    jeffStoreColor = ['#000', '#111'];
+    jeffStoreColor = ['#49494C', '#666F78'];
     sethStoreColor = ['#2E7C52', '#73AF8F'];
     joyActiveBackground = joyAllBackgrounds[0];
 
@@ -241,10 +241,10 @@ function applyColors(event) {
       sethChangeColor('red', 'darkRed');
     }
     if (activeTemplate === allTemplates[3]) {
-      jeffChangeColor('#BB0000', '#690000');
+      jeffChangeColor('#690000', '#BB0000');
     }
     joyStoreColor = ['#d14747', '#a80606', '#870505'];
-    jeffStoreColor = ['#BB0000', '#690000'];
+    jeffStoreColor = ['#690000', '#BB0000'];
     sethStoreColor = ['red', 'darkRed'];
     joyActiveBackground = joyAllBackgrounds[1];
 
@@ -273,10 +273,10 @@ function applyColors(event) {
       sethChangeColor('yellow', 'yellow');
     }
     if (activeTemplate === allTemplates[3]) {
-      jeffChangeColor('#FFE100', '#DEC300');
+      jeffChangeColor('#998700', '#DEC300');
     }
     joyStoreColor = ['#ceaf00', '#876c00', '#82700d'];
-    jeffStoreColor = ['#FFE100', '#DEC300'];
+    jeffStoreColor = ['#998700', '#DEC300'];
     sethStoreColor = ['yellow', 'yellow'];
     joyActiveBackground = joyAllBackgrounds[3];
 
