@@ -44,7 +44,19 @@ var jeffAllBackgrounds = [
   'images/jeff-bgs/purple.jpg'
 ];
 
+var sethAllBackgrounds = [
+  'images/jeff-bgs/default.jpg',
+  'images/jeff-bgs/red.jpg',
+  'images/jeff-bgs/orange.jpg',
+  'images/jeff-bgs/yellow.jpg',
+  'images/jeff-bgs/green.jpg',
+  'images/jeff-bgs/blue.jpg',
+  'images/jeff-bgs/purple.jpg'
+];
+
 var joyActiveBackground = joyAllBackgrounds[0];
+
+var sethActiveBackground = sethAllBackgrounds[0];
 
 var jeffActiveBackground = jeffAllBackgrounds[0];
 
@@ -245,6 +257,7 @@ function applyColors(event) {
     sethStoreColor = ['#2E7C52', '#73AF8F'];
     joyActiveBackground = joyAllBackgrounds[0];
     jeffActiveBackground = jeffAllBackgrounds[0];
+    sethActiveBackground = sethAllBackgrounds[0];
 
   // Red
   } else if (possibleColors[1].checked === true) {
@@ -262,6 +275,7 @@ function applyColors(event) {
     sethStoreColor = ['#a80606', '#d14747'];
     joyActiveBackground = joyAllBackgrounds[1];
     jeffActiveBackground = jeffAllBackgrounds[1];
+    sethActiveBackground = sethAllBackgrounds[1];
 
   // Orange
   } else if (possibleColors[2].checked === true) {
@@ -279,6 +293,7 @@ function applyColors(event) {
     sethStoreColor = ['#c14807', '#efa556'];
     joyActiveBackground = joyAllBackgrounds[2];
     jeffActiveBackground = jeffAllBackgrounds[2];
+    sethActiveBackground = sethAllBackgrounds[2];
 
   // Yellow
   } else if (possibleColors[3].checked === true) {
@@ -296,6 +311,7 @@ function applyColors(event) {
     sethStoreColor = ['#876c00', '#ceaf00'];
     joyActiveBackground = joyAllBackgrounds[3];
     jeffActiveBackground = jeffAllBackgrounds[3];
+    sethActiveBackground = sethAllBackgrounds[3];
 
   // Green
   } else if (possibleColors[4].checked === true) {
@@ -313,6 +329,7 @@ function applyColors(event) {
     sethStoreColor = ['#006d01', '#009b0f'];
     joyActiveBackground = joyAllBackgrounds[4];
     jeffActiveBackground = jeffAllBackgrounds[4];
+    sethActiveBackground = sethAllBackgrounds[4];
 
   // Blue
   } else if (possibleColors[5].checked === true) {
@@ -330,6 +347,7 @@ function applyColors(event) {
     sethStoreColor = ['#004e7f', '#0071b2'];
     joyActiveBackground = joyAllBackgrounds[5];
     jeffActiveBackground = jeffAllBackgrounds[5];
+    sethActiveBackground = sethAllBackgrounds[5];
 
   // Purple
   } else if (possibleColors[6].checked === true) {
@@ -347,15 +365,22 @@ function applyColors(event) {
     sethStoreColor = ['#821865', '#a55697'];
     joyActiveBackground = joyAllBackgrounds[6];
     jeffActiveBackground = jeffAllBackgrounds[6];
+    sethActiveBackground = sethAllBackgrounds[6];
   }
 
   // Backgrounds
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyCheckBackground();
   }
+
+  if (activeTemplate === allTemplates[2]) {
+    sethCheckBackground();
+  }
+
   if (activeTemplate === allTemplates[3]) {
     jeffCheckBackground();
   }
+
 
   // Sends stored colors for each template to local storage
   localStorage['joyColors'] = JSON.stringify(joyStoreColor);
@@ -363,6 +388,7 @@ function applyColors(event) {
   localStorage['sethColors'] = JSON.stringify(sethStoreColor);
   localStorage['joyBackground'] = joyActiveBackground;
   localStorage['jeffBackground'] = jeffActiveBackground;
+  localStorage['sethBackground'] = sethActiveBackground;
   localStorage.colorStored = true;
 }
 
@@ -393,7 +419,7 @@ function sethChangeColor(background, tabs) {
   document.getElementById('navTab1').style.backgroundColor = tabs;
   document.getElementById('navTab2').style.backgroundColor = tabs;
   document.getElementById('navTab3').style.backgroundColor = tabs;
-  document.getElementsByClassName('tablinks active').style.backgroundColor = sethStoreColor[1];
+  // document.getElementsByClassName('tablinks active').style.backgroundColor = sethStoreColor[1];
   // console.log('tablinks Tab: ', document.getElementsByClassName('tablinks'));
   // document.getElementsByClassName('tablinks').style.backgroundColor = '#f1f1f1';
   // document.getElementById('deadTab').style.backgroundColor = '#f1f1f1';
@@ -416,6 +442,11 @@ function applyBackgrounds() {
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyYesBackground();
       }
+
+      if (activeTemplate === allTemplates[2]) {
+        sethYesBackground();
+      }
+
       if (activeTemplate === allTemplates[3]) {
         jeffYesBackground();
       }
@@ -426,6 +457,11 @@ function applyBackgrounds() {
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyNoBackground();
       }
+
+      if (activeTemplate === allTemplates[2]) {
+        sethNoBackground();
+      }
+
       if (activeTemplate === allTemplates[3]) {
         jeffNoBackground();
       }
@@ -459,6 +495,25 @@ function joyCheckBackground() {
   } else { joyNoBackground(); }
 }
 
+function sethYesBackground() {
+  body.style.background = 'url("' + sethActiveBackground + '")';
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundAttachment = 'fixed';
+}
+
+function sethNoBackground() {
+  body.style.background = ' ';
+  body.style.background = sethStoreColor[0];
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundAttachment = 'fixed';
+}
+
+function sethCheckBackground() {
+  if (localStorage.backgroundStored === 'true') {
+    sethYesBackground();
+  } else { sethNoBackground(); }
+}
+
 function jeffYesBackground() {
   body.style.background = 'url("' + jeffActiveBackground + '")';
   body.style.backgroundSize = 'cover';
@@ -480,13 +535,15 @@ if (localStorage.colorStored) {
   jeffStoreColor = JSON.parse(localStorage['jeffColors']);
   sethStoreColor = JSON.parse(localStorage['sethColors']);
   joyActiveBackground = localStorage['joyBackground'];
-  jeffActiveBackground = localStorage['jeffBackground']
+  sethActiveBackground = localStorage['sethBackground'];
+  jeffActiveBackground = localStorage['jeffBackground'];
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyChangeColor(joyStoreColor[0], joyStoreColor[1], joyStoreColor[2]);
     joyCheckBackground();
   }
   if (activeTemplate === allTemplates[2]) {
     sethChangeColor(sethStoreColor[0], sethStoreColor[1]);
+    sethCheckBackground();
   }
   if (activeTemplate === allTemplates[3]) {
     jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
