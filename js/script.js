@@ -108,15 +108,17 @@ function openTab (evt, navTab) {
   // Get all elements with class='tablinks' and remove the class 'active'
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(' active', ' ');
-    tablinks[i].id = ' ';
-    // tabcontent[i].id = ' ';
+    // tablinks[i].className = ' ';
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
+    tablinks[i].style.backgroundColor = '#f1f1f1';
   }
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(navTab).style.display = 'block';
+  evt.currentTarget.style.backgroundColor = sethStoreColor[1];
   evt.currentTarget.className += ' active';
-  evt.currentTarget.id = 'activeTab';
-  // navTab.id = "activeContent";
+  // console.log('color1: ', sethStoreColor[0]);
+  // console.log('color2: ', sethStoreColor[1]);
+  // sethChangeColor(sethStoreColor[0],sethStoreColor[1]);
 }
 
 // Nav: Home Link
@@ -250,14 +252,14 @@ function applyColors(event) {
       joyChangeColor('#d14747', '#a80606', '#870505');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('red', 'darkRed');
+      sethChangeColor('#a80606', '#d14747');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#690000', '#BB0000');
     }
     joyStoreColor = ['#d14747', '#a80606', '#870505'];
     jeffStoreColor = ['#690000', '#BB0000'];
-    sethStoreColor = ['red', 'darkRed'];
+    sethStoreColor = ['#a80606', '#d14747'];
     joyActiveBackground = joyAllBackgrounds[1];
     jeffActiveBackground = jeffAllBackgrounds[1];
 
@@ -267,14 +269,14 @@ function applyColors(event) {
       joyChangeColor('#efa556', '#c14807', '#A05616');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('orange', 'orange');
+      sethChangeColor('#c14807', '#efa556');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#D14800', '#D16024');
     }
     joyStoreColor = ['#efa556', '#c14807', '#A05616'];
     jeffStoreColor = ['#D14800', '#D16024'];
-    sethStoreColor = ['orange', 'orange'];
+    sethStoreColor = ['#c14807', '#efa556'];
     joyActiveBackground = joyAllBackgrounds[2];
     jeffActiveBackground = jeffAllBackgrounds[2];
 
@@ -284,14 +286,14 @@ function applyColors(event) {
       joyChangeColor('#ceaf00', '#876c00', '#82700d');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('yellow', 'yellow');
+      sethChangeColor('#876c00', '#ceaf00');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#998700', '#DEC300');
     }
     joyStoreColor = ['#ceaf00', '#876c00', '#82700d'];
     jeffStoreColor = ['#998700', '#DEC300'];
-    sethStoreColor = ['yellow', 'yellow'];
+    sethStoreColor = ['#876c00', '#ceaf00'];
     joyActiveBackground = joyAllBackgrounds[3];
     jeffActiveBackground = jeffAllBackgrounds[3];
 
@@ -301,14 +303,14 @@ function applyColors(event) {
       joyChangeColor('#009b0f', '#006d01', '#016300');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('green', 'green');
+      sethChangeColor('#006d01', '#009b0f');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#008705', '#006D04');
     }
     joyStoreColor = ['#009b0f', '#006d01', '#016300'];
     jeffStoreColor = ['#008705', '#006D04'];
-    sethStoreColor = ['green', 'green'];
+    sethStoreColor = ['#006d01', '#009b0f'];
     joyActiveBackground = joyAllBackgrounds[4];
     jeffActiveBackground = jeffAllBackgrounds[4];
 
@@ -318,14 +320,14 @@ function applyColors(event) {
       joyChangeColor('#0071b2', '#004e7f', '#063451');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('blue', 'blue');
+      sethChangeColor('#004e7f', '#0071b2');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#3D5091', '#001991');
     }
     joyStoreColor = ['#0071b2', '#004e7f', '#063451'];
     jeffStoreColor = ['#3D5091', '#001991'];
-    sethStoreColor = ['blue', 'blue'];
+    sethStoreColor = ['#004e7f', '#0071b2'];
     joyActiveBackground = joyAllBackgrounds[5];
     jeffActiveBackground = jeffAllBackgrounds[5];
 
@@ -335,14 +337,14 @@ function applyColors(event) {
       joyChangeColor('#a55697', '#821865', '#7c2969');
     }
     if (activeTemplate === allTemplates[2]) {
-      sethChangeColor('purple', 'purple');
+      sethChangeColor('#821865', '#a55697');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#680078', '#9A00B8');
     }
     joyStoreColor = ['#a55697', '#821865', '#7c2969'];
     jeffStoreColor = ['#680078', '#9A00B8'];
-    sethStoreColor = ['purple', 'purple'];
+    sethStoreColor = ['#821865', '#a55697'];
     joyActiveBackground = joyAllBackgrounds[6];
     jeffActiveBackground = jeffAllBackgrounds[6];
   }
@@ -387,10 +389,14 @@ function joyChangeColor(gradient1, gradient2, shadow) {
 
 function sethChangeColor(background, tabs) {
   body.style.backgroundColor = background;
-  document.getElementById('activeTab').style.backgroundColor = tabs;
+  // console.log('Active Tab: ', document.getElementById('activeTab'));
   document.getElementById('navTab1').style.backgroundColor = tabs;
   document.getElementById('navTab2').style.backgroundColor = tabs;
   document.getElementById('navTab3').style.backgroundColor = tabs;
+  document.getElementsByClassName('tablinks active').style.backgroundColor = sethStoreColor[1];
+  // console.log('tablinks Tab: ', document.getElementsByClassName('tablinks'));
+  // document.getElementsByClassName('tablinks').style.backgroundColor = '#f1f1f1';
+  // document.getElementById('deadTab').style.backgroundColor = '#f1f1f1';
 }
 
 function jeffChangeColor(gradientA, gradientB) {
@@ -437,12 +443,6 @@ function joyYesBackground() {
   }
 }
 
-function jeffYesBackground() {
-  body.style.background = 'url("' + jeffActiveBackground + '")';
-  body.style.backgroundSize = 'cover';
-  body.style.backgroundAttachment = 'fixed';
-}
-
 function joyNoBackground() {
   wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ')';
   wrapper.style.backgroundSize = 'cover';
@@ -453,14 +453,20 @@ function joyNoBackground() {
   }
 }
 
-function jeffNoBackground() {
-  jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
-}
-
 function joyCheckBackground() {
   if (localStorage.backgroundStored === 'true') {
     joyYesBackground();
   } else { joyNoBackground(); }
+}
+
+function jeffYesBackground() {
+  body.style.background = 'url("' + jeffActiveBackground + '")';
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundAttachment = 'fixed';
+}
+
+function jeffNoBackground() {
+  jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
 }
 
 function jeffCheckBackground() {
