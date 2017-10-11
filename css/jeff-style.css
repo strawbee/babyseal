@@ -32,7 +32,7 @@ a:hover {
 nav {
   display: inline-block;
   float: right;
-  font-size: 18px;
+  font-size: 17px;
   margin-top: 20px;
   padding-left: 5px;
   width: 26%;
@@ -137,6 +137,14 @@ button:hover {
   text-align: center;
 }
 
+#backgroundsSection {
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+#backgroundsInstructions {
+  text-align: center;
+}
 .pageBottomButtons {
   text-align: center;
 }

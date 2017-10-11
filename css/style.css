@@ -28,10 +28,10 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   background: linear-gradient(#4ec3d8, #07a4c1) fixed;
-  /*background: url("../images/joy-bgs/yellow.jpg") fixed;*/
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -72,7 +72,7 @@ nav li:hover {
 
 header {
   display: block;
-  margin: 110px 5% 80px 5%;
+  margin: 110px 50px 80px 50px;
   padding: 40px;
   line-height: 2em;
   text-align: center;
@@ -117,7 +117,7 @@ header #headerNext {
 
 section {
   position: relative;
-  margin: 110px 5% 80px 5%;
+  margin: 110px 50px 80px 50px;
   padding: 40px 50px;
   line-height: 2em;
   text-shadow: 1px 1px 3px #057287;
@@ -216,7 +216,7 @@ button:focus {
   margin-left: 0;
 }
 
-#backgroundsForm {
+#colorsForm, #backgroundsForm {
   text-align: center;
 }
 
@@ -323,17 +323,7 @@ footer:hover {
   to { margin-top: 110px; }
 }
 
-@keyframes slide-left {
-  from { margin-right: -200%; }
-  to { margin-right: 5%; }
-}
-
-@keyframes slide-right {
-  from { margin-left: -200%; }
-  to { margin-left: 5%; }
-}
-
-@keyframes slide-up {
-  from { margin-bottom: -100%; }
-  to { margin-bottom: 80px; }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
