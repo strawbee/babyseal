@@ -9,8 +9,10 @@ var homeLink = document.getElementById('homeLink');
 var aboutUsLink = document.getElementById('aboutUsLink');
 var chooseLayoutLink = document.getElementById('chooseLayoutLink');
 var wrapper = document.getElementById('wrapper');
+var activeTab = document.getElementsByClassName(' active');
+var tabContent = document.getElementsByClassName('tabcontent');
+var body = querySelector('body');
 var joyStoreColor, jeffStoreColor;
-
 
 
 /* ==================================== TEMPLATES ==================================== */
@@ -72,6 +74,29 @@ document.getElementById('templatesForm').addEventListener('submit', applyTemplat
 
 
 /* ==================================== NAV AND BUTTONS ==================================== */
+
+// Seth Nav
+function openTab (evt, navTab) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName('tabcontent');
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
+  // Get all elements with class='tablinks' and remove the class 'active'
+  tablinks = document.getElementsByClassName('tablinks');
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(' active', ' ');
+    tablinks[i].id = ' ';
+    // tabcontent[i].id = ' ';
+  }
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(navTab).style.display = 'block';
+  evt.currentTarget.className += ' active';
+  evt.currentTarget.id = 'activeTab';
+  // navTab.id = "activeContent";
+}
 
 // Nav: Home Link
 function goHome() {
@@ -200,6 +225,9 @@ function applyColors(event) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#4ec3d8', '#07a4c1', '#057287');
     }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('#2E7C52', '#73AF8F');
+    }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#000', '#111');
     }
@@ -211,6 +239,9 @@ function applyColors(event) {
   } else if (possibleColors[1].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#d14747', '#a80606', '#870505');
+    }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('red', 'darkRed');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#BB0000', '#690000');
@@ -224,6 +255,9 @@ function applyColors(event) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#efa556', '#c14807', '#A05616');
     }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('orange', 'orange');
+    }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#D14800', '#D16024');
     }
@@ -235,6 +269,9 @@ function applyColors(event) {
   } else if (possibleColors[3].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#ceaf00', '#876c00', '#82700d');
+    }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('yellow', 'yellow');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#FFE100', '#DEC300');
@@ -248,6 +285,9 @@ function applyColors(event) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#009b0f', '#006d01', '#016300');
     }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('green', 'green');
+    }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#008705', '#006D04');
     }
@@ -259,6 +299,9 @@ function applyColors(event) {
   } else if (possibleColors[5].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#0071b2', '#004e7f', '#063451');
+    }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('blue', 'blue');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#3D5091', '#001991');
@@ -272,6 +315,9 @@ function applyColors(event) {
   } else if (possibleColors[6].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#a55697', '#821865', '#7c2969');
+    }
+    if (activeTemplate === allTemplates[2]) {
+      sethChangeColor('purple', 'purple');
     }
     if (activeTemplate === allTemplates[3]) {
       jeffChangeColor('#680078', '#9A00B8');
@@ -306,6 +352,14 @@ function joyChangeColor(gradient1, gradient2, shadow) {
   templatesSection.style.textShadow = '1px 1px 3px ' + shadow;
   colorsSection.style.textShadow = '1px 1px 3px ' + shadow;
   aboutUsSection.style.textShadow = '1px 1px 3px ' + shadow;
+}
+
+function sethChangeColor(background, tabs) {
+  body.style.backgroundColor = background;
+  document.getElementById('activeTab').style.backgroundColor = tabs;
+  document.getElementById('navTab1').style.backgroundColor = tabs;
+  document.getElementById('navTab2').style.backgroundColor = tabs;
+  document.getElementById('navTab3').style.backgroundColor = tabs;
 }
 
 function jeffChangeColor(gradientA, gradientB) {
