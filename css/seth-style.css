@@ -1,12 +1,13 @@
-/*Style Sheet ot Template #3 */
+/*Style Sheet of Template #3 */
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-
 body {
+  font-family: Raleway, sans-serif;
   background-color: #2E7C52;
 }
 
 #wrapper {
+  position: relative;
 }
 
 header {
@@ -14,12 +15,15 @@ header {
   /*margin: auto;*/
   padding: 20px;
   /*text-align: left;*/
-
   height: 40px;
   background-color: #001409;
   color: #DDEDE5;
   box-shadow: 0px 3px 3px 3px rgba(10, 10, 10, .8);
   font-family: 'Josefin Sans', sans-serif;
+}
+
+#headerInstructions, #headerNext {
+  display: none;
 }
 
 h1 {
@@ -33,22 +37,19 @@ h1 {
     animation: slide 0.5s forwards;
     animation-delay: .5s;
 }
-
 h2 {
   margin: 20px;
 }
-
 @-webkit-keyframes slide {
     100% { left: 0; }
 }
-
 @keyframes slide {
     100% { left: 50%; }
 }
-
 nav {
-  margin: 50px 30px;
-  font-family: Raleway, sans-serif;
+  margin: 50px 0 50px 5%;
+  width: 90%;
+  z-index: 2;
 }
 /* Style the tab */
 nav .tab {
@@ -59,11 +60,15 @@ nav .tab {
 }
 
 #shadowDiv {
+  position: absolute;
+  top: 135px;
+  width: 90%;
+  margin: 50px 0 50px 5%;
   box-shadow: 0px 4px 4px 4px rgba(10, 10, 10, .8);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  z-index: -1;
 }
-
 /* Style the buttons inside the tab */
 .tab button {
   font-size: 20px;
@@ -82,20 +87,16 @@ nav .tab {
   border-bottom-width: 3px;
   border-bottom-color: #ccc;
   z-index: 1;
-
 }
-
 /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #a9a9a9;
 }
-
 /* Create an active/current tablink class */
 .tab button.active {
     background-color: #73AF8F;
     border-bottom-color: #73AF8F;
 }
-
 /* Style the tab content */
 .tabcontent {
   font-size: 18px;
@@ -107,65 +108,55 @@ nav .tab {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
 /*Display on Default*/
 #navTab3 {
   display: block;
 }
-
 #templatesInstructions {
   font-size: 26px;
   text-align: center;
 }
-
 #templatesSection {
   display: none;
 }
-
 #colorsSection {
   display: inline;
 }
-
-#backgroundSection {
+#backgroundsSection {
   display: none;
 }
-
+nav > ul {
+  display: none;
+}
 .tabcontent {
     -webkit-animation: fadeEffect 1.5s;
     animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
 }
-
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
 #templatesForm {
   white-space: nowrap;
   text-align: center;
   margin: 40px auto 0 auto;
 }
-
 #colorsDiv p {
   margin: 20px;
 }
-
 #colorsForm {
   display: inline;
   white-space: nowrap;
   /*text-align: center;*/
   margin: 40px;
 }
-
 .nowrap {
   margin: 20px;
 }
-
 #templatesSection img {
   vertical-align: middle;
   width: 15%;
@@ -175,11 +166,12 @@ nav .tab {
   border-radius: 10px;
   box-shadow: 4px 4px 4px #057287;
 }
-
 #templatesSection img:hover {
   box-shadow: 4px 4px 4px #222;
 }
-
+.previousButton {
+  display: inline-block;
+}
 form button {
   margin: 30px 10px 10px 10px;
   padding: 10px;
@@ -190,22 +182,18 @@ form button {
   color: #000;
   box-shadow: 4px 4px 4px #057287;
 }
-
 form button:hover {
   border-color: #f1f1f1;
   background: #ccc;
   /*color: #fff;*/
   box-shadow: 4px 4px 4px #222;
 }
-
 /*form button:focus {
   outline: 0;
 }*/
-
 .pageBottomButtons {
   text-align: right;
 }
-
 footer {
   text-align: center;
   padding: 10px;
