@@ -1,20 +1,45 @@
 'use strict';
+
+// CHANGING TEMPLATES
 var stylesheets = document.querySelectorAll('link');
+
+var allTemplates = [
+  'css/style.css',
+  'css/joy-style.css',
+  'css/seth-style.css',
+  'css/jeff-style.css'
+];
 
 function applyTemplates(event) {
   event.preventDefault();
   var possibleTemplates = document.getElementsByName('templatesRadioButton');
 
-  if (possibleTemplates[0].checked === true) {
-    stylesheets[2].href = 'css/style.css';
-  } else if (possibleTemplates[1].checked === true) {
-    stylesheets[2].href = 'css/joy-style.css';
-  } else if (possibleTemplates[2].checked === true) {
-    stylesheets[2].href = 'css/seth-style.css';
-  } else if (possibleTemplates[3].checked === true) {
-    stylesheets[2].href = 'css/jeff-style.css';
+  for (var radio = 0; radio < allTemplates.length; radio++) {
+    if (possibleTemplates[radio].checked === true) {
+      stylesheets[2].href = allTemplates[radio];
+      localStorage['template'] = allTemplates[radio];
+      localStorage.templateStored = true;
+      window.location.reload(true);
+    }
   }
-  document.getElementById('wrapper').style.animationName = 'change-template';
 }
 
+// Checks Stored Templates
+if (localStorage.templateStored) {
+  var activeTemplate = localStorage['template'];
+  stylesheets[2].href = activeTemplate;
+  /*if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    document.querySelector('header').style.display = 'none';
+    document.getElementById('templatesSection').style.display = 'block';
+  } else if (activeTemplate === allTemplates[2]) {
+    // Insert Seth's stuff
+  }*/
+} else {
+  stylesheets[2].href = allTemplates[0];
+}
+
+// Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
+
+
+// JOY'S SCRIPT
