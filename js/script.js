@@ -34,8 +34,19 @@ var joyAllBackgrounds = [
   'images/joy-bgs/purple.jpg'
 ];
 
+var jeffAllBackgrounds = [
+  'images/jeff-bgs/default.jpg',
+  'images/jeff-bgs/red.jpg',
+  'images/jeff-bgs/orange.jpg',
+  'images/jeff-bgs/yellow.jpg',
+  'images/jeff-bgs/green.jpg',
+  'images/jeff-bgs/blue.jpg',
+  'images/jeff-bgs/purple.jpg'
+];
+
 var joyActiveBackground = joyAllBackgrounds[0];
 
+var jeffActiveBackground = jeffAllBackgrounds[0];
 
 /* ==================================== TEMPLATES ==================================== */
 
@@ -231,6 +242,7 @@ function applyColors(event) {
     jeffStoreColor = ['#49494C', '#666F78'];
     sethStoreColor = ['#2E7C52', '#73AF8F'];
     joyActiveBackground = joyAllBackgrounds[0];
+    jeffActiveBackground = jeffAllBackgrounds[0];
 
   // Red
   } else if (possibleColors[1].checked === true) {
@@ -247,6 +259,7 @@ function applyColors(event) {
     jeffStoreColor = ['#690000', '#BB0000'];
     sethStoreColor = ['red', 'darkRed'];
     joyActiveBackground = joyAllBackgrounds[1];
+    jeffActiveBackground = jeffAllBackgrounds[1];
 
   // Orange
   } else if (possibleColors[2].checked === true) {
@@ -263,6 +276,7 @@ function applyColors(event) {
     jeffStoreColor = ['#D14800', '#D16024'];
     sethStoreColor = ['orange', 'orange'];
     joyActiveBackground = joyAllBackgrounds[2];
+    jeffActiveBackground = jeffAllBackgrounds[2];
 
   // Yellow
   } else if (possibleColors[3].checked === true) {
@@ -279,6 +293,7 @@ function applyColors(event) {
     jeffStoreColor = ['#998700', '#DEC300'];
     sethStoreColor = ['yellow', 'yellow'];
     joyActiveBackground = joyAllBackgrounds[3];
+    jeffActiveBackground = jeffAllBackgrounds[3];
 
   // Green
   } else if (possibleColors[4].checked === true) {
@@ -295,6 +310,7 @@ function applyColors(event) {
     jeffStoreColor = ['#008705', '#006D04'];
     sethStoreColor = ['green', 'green'];
     joyActiveBackground = joyAllBackgrounds[4];
+    jeffActiveBackground = jeffAllBackgrounds[4];
 
   // Blue
   } else if (possibleColors[5].checked === true) {
@@ -311,6 +327,7 @@ function applyColors(event) {
     jeffStoreColor = ['#3D5091', '#001991'];
     sethStoreColor = ['blue', 'blue'];
     joyActiveBackground = joyAllBackgrounds[5];
+    jeffActiveBackground = jeffAllBackgrounds[5];
 
   // Purple
   } else if (possibleColors[6].checked === true) {
@@ -327,11 +344,15 @@ function applyColors(event) {
     jeffStoreColor = ['#680078', '#9A00B8'];
     sethStoreColor = ['purple', 'purple'];
     joyActiveBackground = joyAllBackgrounds[6];
+    jeffActiveBackground = jeffAllBackgrounds[6];
   }
 
   // Backgrounds
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyCheckBackground();
+  }
+  if (activeTemplate === allTemplates[3]) {
+    jeffCheckBackground();
   }
 
   // Sends stored colors for each template to local storage
@@ -339,6 +360,7 @@ function applyColors(event) {
   localStorage['jeffColors'] = JSON.stringify(jeffStoreColor);
   localStorage['sethColors'] = JSON.stringify(sethStoreColor);
   localStorage['joyBackground'] = joyActiveBackground;
+  localStorage['jeffBackground'] = jeffActiveBackground;
   localStorage.colorStored = true;
 }
 
@@ -372,7 +394,7 @@ function sethChangeColor(background, tabs) {
 }
 
 function jeffChangeColor(gradientA, gradientB) {
-  document.querySelector('body').style.background = 'linear-gradient(' + gradientA + ', ' + gradientB + ')';
+  body.style.background = 'linear-gradient(' + gradientA + ', ' + gradientB + ')';
 }
 
 // Background Functions
@@ -388,12 +410,18 @@ function applyBackgrounds() {
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyYesBackground();
       }
+      if (activeTemplate === allTemplates[3]) {
+        jeffYesBackground();
+      }
     }
     else if (possibleBackgrounds[1].checked === true) {
       localStorage.backgroundStored = 'false';
       // If no background on Joy's templates
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyNoBackground();
+      }
+      if (activeTemplate === allTemplates[3]) {
+        jeffNoBackground();
       }
     }
   }
@@ -409,6 +437,12 @@ function joyYesBackground() {
   }
 }
 
+function jeffYesBackground() {
+  body.style.background = 'url("' + jeffActiveBackground + '")';
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundAttachment = 'fixed';
+}
+
 function joyNoBackground() {
   wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ')';
   wrapper.style.backgroundSize = 'cover';
@@ -419,18 +453,28 @@ function joyNoBackground() {
   }
 }
 
+function jeffNoBackground() {
+  jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
+}
+
 function joyCheckBackground() {
   if (localStorage.backgroundStored === 'true') {
     joyYesBackground();
   } else { joyNoBackground(); }
 }
 
+function jeffCheckBackground() {
+  if (localStorage.backgroundStored === 'true') {
+    jeffYesBackground();
+  } else { jeffNoBackground(); }
+}
 // Pulls stored colors and backgrounds for each template from local storage, and applies the correct color function depending on which template is active
 if (localStorage.colorStored) {
   joyStoreColor = JSON.parse(localStorage['joyColors']);
   jeffStoreColor = JSON.parse(localStorage['jeffColors']);
   sethStoreColor = JSON.parse(localStorage['sethColors']);
   joyActiveBackground = localStorage['joyBackground'];
+  jeffActiveBackground = localStorage['jeffBackground']
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyChangeColor(joyStoreColor[0], joyStoreColor[1], joyStoreColor[2]);
     joyCheckBackground();
@@ -440,6 +484,7 @@ if (localStorage.colorStored) {
   }
   if (activeTemplate === allTemplates[3]) {
     jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
+    jeffCheckBackground();
   }
 }
 
