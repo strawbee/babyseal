@@ -209,3 +209,11 @@ img:hover {
 .defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
   color: #000;
 }
+
+.tab {
+  display: none;
+}
+
+#navTab1 {
+  display: none;
+}

@@ -67,6 +67,7 @@ nav li {
 
 nav li:hover {
   background: #057287;
+  cursor: auto;
 }
 
 header {
@@ -76,7 +77,7 @@ header {
   line-height: 2em;
   text-align: center;
   cursor: default;
-  overflow: scroll;
+  overflow: auto;
 }
 
 h1 {
@@ -111,6 +112,7 @@ header #headerNext {
   font-size: 1.2em;
   text-align: right;
   margin: 20px;
+  text-shadow: 2px 2px 3px #057287;
 }
 
 section {
@@ -119,7 +121,7 @@ section {
   padding: 40px 50px;
   line-height: 2em;
   text-shadow: 1px 1px 3px #057287;
-  overflow: scroll;
+  overflow: auto;
   border-radius: 20px;
   opacity: 1.0;
 }
@@ -280,8 +282,8 @@ footer {
 }
 
 footer:hover {
-  color: #fff;
   cursor: default;
+  color: #fff;
 }
 
 #colorsSection, #aboutUsSection, #templatesSection, #templatesInstructions, #colorsInstructions, #backgroundsSection {
@@ -290,10 +292,6 @@ footer:hover {
 
 #backgroundsInstructions {
   text-align: center;
-}
-
-#sethNav {
-  display: none;
 }
 
 .tab {
@@ -319,7 +317,6 @@ footer:hover {
 .backgroundsMargin:hover {
   color: #eee;
 }
-
 
 @keyframes slide-down {
   from { margin-top: -100%; }

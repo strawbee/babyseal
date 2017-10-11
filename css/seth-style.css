@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 body {
   font-family: Raleway, sans-serif;
+  background-color: #2E7C52;
 }
 
 #wrapper {
   position: relative;
-  background-color: #2E7C52;
-  z-index: -2;
+  height: 100vh;
 }
 
 header {
@@ -48,9 +48,8 @@ h2 {
     100% { left: 50%; }
 }
 nav {
-  margin: 50px 0 50px 5%;
+  margin: 50px 0 0 5%;
   width: 90%;
-  z-index: 2;
 }
 /* Style the tab */
 nav .tab {
@@ -60,14 +59,12 @@ nav .tab {
 }
 
 #shadowDiv {
-  position: absolute;
   top: 135px;
   width: 90%;
-  margin: 50px 0 50px 5%;
+  margin: 0 0 50px 5%;
   box-shadow: 0px 4px 4px 4px rgba(10, 10, 10, .8);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  z-index: -1;
 }
 /* Style the buttons inside the tab */
 .tab button {
@@ -86,7 +83,6 @@ nav .tab {
   border-color: #ccc;
   border-bottom-width: 3px;
   border-bottom-color: #ccc;
-  z-index: 1;
 }
 /* Change background color of buttons on hover */
 .tab button:hover {
