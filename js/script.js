@@ -11,12 +11,9 @@ var chooseLayoutLink = document.getElementById('chooseLayoutLink');
 var wrapper = document.getElementById('wrapper');
 var activeTab = document.getElementsByClassName(' active');
 var tabContent = document.getElementsByClassName('tabcontent');
-var body = querySelector('body');
-var joyStoreColor, jeffStoreColor;
-
-
-/* ==================================== TEMPLATES ==================================== */
-
+var body = document.querySelector('body');
+var section = document.querySelectorAll('section');
+var joyStoreColor, jeffStoreColor, sethStoreColor;
 var stylesheets = document.querySelectorAll('link');
 var activeTemplate;
 
@@ -26,6 +23,21 @@ var allTemplates = [
   'css/seth-style.css',
   'css/jeff-style.css'
 ];
+
+var joyAllBackgrounds = [
+  'images/joy-bgs/default.jpg',
+  'images/joy-bgs/red.jpg',
+  'images/joy-bgs/orange.jpg',
+  'images/joy-bgs/yellow.jpg',
+  'images/joy-bgs/green.jpg',
+  'images/joy-bgs/blue.jpg',
+  'images/joy-bgs/purple.jpg'
+];
+
+var joyActiveBackground = joyAllBackgrounds[0];
+
+
+/* ==================================== TEMPLATES ==================================== */
 
 // Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to true and reload page.
 function applyTemplates(event) {
@@ -69,8 +81,6 @@ if (localStorage.startAtTemplate === 'true') {
 
 // Apply Templates Event Listener
 document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
-
-
 
 
 /* ==================================== NAV AND BUTTONS ==================================== */
@@ -151,7 +161,7 @@ function templatesNext() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'block';
     templatesSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-left';
+    colorsSection.style.animationName = 'slide-down';
     colorsSection.style.animationDuration = '1.5s';
   }
 }
@@ -161,7 +171,7 @@ function colorsPrevious() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     templatesSection.style.display = 'block';
     colorsSection.style.display = 'none';
-    templatesSection.style.animationName = 'slide-right';
+    templatesSection.style.animationName = 'slide-down';
     templatesSection.style.animationDuration = '1.5s';
   }
 }
@@ -171,7 +181,7 @@ function colorsNext() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'none';
     backgroundsSection.style.display = 'block';
-    backgroundsSection.style.animationName = 'slide-left';
+    backgroundsSection.style.animationName = 'slide-down';
     backgroundsSection.style.animationDuration = '1.5s';
   }
 }
@@ -181,7 +191,7 @@ function backgroundsPrevious() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'block';
     backgroundsSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-right';
+    colorsSection.style.animationName = 'slide-down';
     colorsSection.style.animationDuration = '1.5s';
   }
 }
@@ -197,24 +207,10 @@ document.getElementById('colorsNextButton').addEventListener('click', colorsNext
 document.getElementById('backgroundsPreviousButton').addEventListener('click', backgroundsPrevious);
 document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
+/* ==================================== Colors & Backgrounds ==================================== */
 
 
-
-/* ==================================== Colors ==================================== */
-
-var joyAllBackgrounds = [
-  '../images/joy-bgs/default.jpg',
-  '../images/joy-bgs/red.jpg',
-  '../images/joy-bgs/orange.jpg',
-  '../images/joy-bgs/yellow.jpg',
-  '../images/joy-bgs/green.jpg',
-  '../images/joy-bgs/blue.jpg',
-  '../images/joy-bgs/purple.jpg'
-];
-
-var joyActiveBackground = joyAllBackgrounds[0];
-
-// Global function to call upon clicking apply
+// Global function to call upon clicking apply colors
 
 function applyColors(event) {
   event.preventDefault();
@@ -233,6 +229,7 @@ function applyColors(event) {
     }
     joyStoreColor = ['#4ec3d8', '#07a4c1', '#057287'];
     jeffStoreColor = ['#000', '#111'];
+    sethStoreColor = ['#2E7C52', '#73AF8F'];
     joyActiveBackground = joyAllBackgrounds[0];
 
   // Red
@@ -248,6 +245,7 @@ function applyColors(event) {
     }
     joyStoreColor = ['#d14747', '#a80606', '#870505'];
     jeffStoreColor = ['#BB0000', '#690000'];
+    sethStoreColor = ['red', 'darkRed'];
     joyActiveBackground = joyAllBackgrounds[1];
 
   // Orange
@@ -263,6 +261,7 @@ function applyColors(event) {
     }
     joyStoreColor = ['#efa556', '#c14807', '#A05616'];
     jeffStoreColor = ['#D14800', '#D16024'];
+    sethStoreColor = ['orange', 'orange'];
     joyActiveBackground = joyAllBackgrounds[2];
 
   // Yellow
@@ -278,6 +277,7 @@ function applyColors(event) {
     }
     joyStoreColor = ['#ceaf00', '#876c00', '#82700d'];
     jeffStoreColor = ['#FFE100', '#DEC300'];
+    sethStoreColor = ['yellow', 'yellow'];
     joyActiveBackground = joyAllBackgrounds[3];
 
   // Green
@@ -293,6 +293,7 @@ function applyColors(event) {
     }
     joyStoreColor = ['#009b0f', '#006d01', '#016300'];
     jeffStoreColor = ['#008705', '#006D04'];
+    sethStoreColor = ['green', 'green'];
     joyActiveBackground = joyAllBackgrounds[4];
 
   // Blue
@@ -308,8 +309,8 @@ function applyColors(event) {
     }
     joyStoreColor = ['#0071b2', '#004e7f', '#063451'];
     jeffStoreColor = ['#3D5091', '#001991'];
+    sethStoreColor = ['blue', 'blue'];
     joyActiveBackground = joyAllBackgrounds[5];
-
 
   // Purple
   } else if (possibleColors[6].checked === true) {
@@ -324,12 +325,19 @@ function applyColors(event) {
     }
     joyStoreColor = ['#a55697', '#821865', '#7c2969'];
     jeffStoreColor = ['#680078', '#9A00B8'];
+    sethStoreColor = ['purple', 'purple'];
     joyActiveBackground = joyAllBackgrounds[6];
+  }
+
+  // Backgrounds
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    joyCheckBackground();
   }
 
   // Sends stored colors for each template to local storage
   localStorage['joyColors'] = JSON.stringify(joyStoreColor);
   localStorage['jeffColors'] = JSON.stringify(jeffStoreColor);
+  localStorage['sethColors'] = JSON.stringify(sethStoreColor);
   localStorage['joyBackground'] = joyActiveBackground;
   localStorage.colorStored = true;
 }
@@ -346,6 +354,7 @@ function joyChangeColor(gradient1, gradient2, shadow) {
   chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
   document.querySelector('h1').style.textShadow = '2px 2px 4px ' + shadow;
   document.getElementById('headerInstructions').style.textShadow = '2px 2px 3px ' + shadow;
+  document.getElementById('headerNext').style.textShadow = '2px 2px 3px ' + shadow;
   document.getElementById('templatesHeader').style.textShadow = '2px 2px 4px ' + shadow;
   document.getElementById('colorsHeader').style.textShadow = '2px 2px 4px ' + shadow;
   document.getElementById('aboutUsHeader').style.textShadow = '2px 2px 4px ' + shadow;
@@ -366,13 +375,68 @@ function jeffChangeColor(gradientA, gradientB) {
   document.querySelector('body').style.background = 'linear-gradient(' + gradientA + ', ' + gradientB + ')';
 }
 
+// Background Functions
+
+function applyBackgrounds() {
+  event.preventDefault();
+  var possibleBackgrounds = document.getElementsByName('backgroundsRadioButton');
+
+  for (var bg = 0; bg < joyAllBackgrounds.length; bg++) {
+    if (possibleBackgrounds[0].checked === true) {
+      localStorage.backgroundStored = 'true';
+      // If yes background on Joy's templates
+      if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+        joyYesBackground();
+      }
+    }
+    else if (possibleBackgrounds[1].checked === true) {
+      localStorage.backgroundStored = 'false';
+      // If no background on Joy's templates
+      if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+        joyNoBackground();
+      }
+    }
+  }
+}
+
+function joyYesBackground() {
+  wrapper.style.background = 'url("' + joyActiveBackground + '")';
+  wrapper.style.backgroundSize = 'cover';
+  wrapper.style.backgroundAttachment = 'fixed';
+  for (var k = 0; k < section.length; k++) {
+    section[k].style.opacity = '0.8';
+    section[k].style.background = '#000';
+  }
+}
+
+function joyNoBackground() {
+  wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ')';
+  wrapper.style.backgroundSize = 'cover';
+  wrapper.style.backgroundAttachment = 'fixed';
+  for (var l = 0; l < section.length; l++) {
+    section[l].style.opacity = '1.0';
+    section[l].style.background = 'inherit';
+  }
+}
+
+function joyCheckBackground() {
+  if (localStorage.backgroundStored === 'true') {
+    joyYesBackground();
+  } else { joyNoBackground(); }
+}
+
 // Pulls stored colors and backgrounds for each template from local storage, and applies the correct color function depending on which template is active
 if (localStorage.colorStored) {
   joyStoreColor = JSON.parse(localStorage['joyColors']);
   jeffStoreColor = JSON.parse(localStorage['jeffColors']);
+  sethStoreColor = JSON.parse(localStorage['sethColors']);
   joyActiveBackground = localStorage['joyBackground'];
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyChangeColor(joyStoreColor[0], joyStoreColor[1], joyStoreColor[2]);
+    joyCheckBackground();
+  }
+  if (activeTemplate === allTemplates[2]) {
+    sethChangeColor(sethStoreColor[0], sethStoreColor[1]);
   }
   if (activeTemplate === allTemplates[3]) {
     jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
@@ -381,42 +445,5 @@ if (localStorage.colorStored) {
 
 // Colors Event Listeners
 document.getElementById('colorsForm').addEventListener('submit', applyColors);
-
-
-
-
-/* ==================================== Backgrounds ==================================== */
-
-var section = document.querySelectorAll('section');
-
-function applyBackgrounds() {
-  event.preventDefault();
-  var possibleBackgrounds = document.getElementsByName('backgroundsRadioButton');
-
-  for (var bg = 0; bg < joyAllBackgrounds.length; bg++) {
-    if (possibleBackgrounds[0].checked === true) {
-      // If yes background on Joy's templates
-      if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-        wrapper.style.background = 'url("' + joyActiveBackground + '") fixed;';
-        for (var k = 0; k < section.length; k++) {
-          section[k].style.opacity = '0.8';
-          section[k].style.background = '#000';
-        }
-      }
-    }
-    else if (possibleBackgrounds[1].checked === true) {
-      // If no background on Joy's templates
-      if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-        wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ') fixed';
-        for (var l = 0; l < section.length; l++) {
-          section[l].style.opacity = '1.0';
-          section[l].style.background = 'inherit';
-        }
-      }
-    }
-  }
-}
-
-
 // Backgrounds Event Listeners
 backgroundsForm.addEventListener('submit', applyBackgrounds);
