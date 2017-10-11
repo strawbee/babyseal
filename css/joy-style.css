@@ -28,11 +28,11 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   background: linear-gradient(#4ec3d8, #07a4c1) fixed;
-  /*background: url("../images/joy-bgs/default.jpg") fixed;*/
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +42,7 @@ a:hover {
 
 nav {
   position: fixed;
+  top: 0;
   left: 0;
   height: 100%;
   width: 260px;
@@ -80,7 +81,7 @@ header {
   line-height: 2em;
   text-align: center;
   cursor: default;
-  overflow: scroll;
+  overflow: auto;
 }
 
 h1 {
@@ -124,7 +125,7 @@ section {
   padding: 30px;
   line-height: 2em;
   text-shadow: 1px 1px 3px #057287;
-  overflow: scroll;
+  overflow: auto;
   border-radius: 20px;
   opacity: 1.0;
 }
@@ -327,17 +328,7 @@ footer:hover {
   to { margin-top: 30px; }
 }
 
-@keyframes slide-left {
-  from { margin-right: -200%; }
-  to { margin-right: 30px; }
-}
-
-@keyframes slide-right {
-  from { margin-left: -200%; }
-  to { margin-left: 290px; }
-}
-
-@keyframes slide-up {
-  from { margin-bottom: -100%; }
-  to { margin-bottom: 30px; }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
