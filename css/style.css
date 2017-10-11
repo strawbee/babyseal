@@ -287,6 +287,9 @@ footer:hover {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.colorMargin {
   margin: 0 20px;
 }
 

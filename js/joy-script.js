@@ -7,6 +7,7 @@ var homeLink = document.getElementById('homeLink');
 var aboutUsLink = document.getElementById('aboutUsLink');
 var chooseLayoutLink = document.getElementById('chooseLayoutLink');
 var wrapper = document.getElementById('wrapper');
+var storeColor;
 
 // Navigation Functions
 function goHome() {
@@ -65,19 +66,28 @@ function applyColors(event) {
   var possibleColors = document.getElementsByName('colorsRadioButton');
   if (possibleColors[0].checked === true) {
     changeColor('#4ec3d8', '#07a4c1', '#057287'); // Default
+    storeColor = ['#4ec3d8', '#07a4c1', '#057287'];
   } else if (possibleColors[1].checked === true) {
     changeColor('#d14747', '#a80606', '#870505'); // Red
+    storeColor = ['#d14747', '#a80606', '#870505'];
   } else if (possibleColors[2].checked === true) {
     changeColor('#efa556', '#c14807', '#A05616'); // Orange
+    storeColor = ['#efa556', '#c14807', '#A05616'];
   } else if (possibleColors[3].checked === true) {
     changeColor('#ceaf00', '#876c00', '#82700d'); // Yellow
+    storeColor = ['#ceaf00', '#876c00', '#82700d'];
   } else if (possibleColors[4].checked === true) {
     changeColor('#009b0f', '#006d01', '#016300'); // Green
+    storeColor = ['#009b0f', '#006d01', '#016300'];
   } else if (possibleColors[5].checked === true) {
     changeColor('#0071b2', '#004e7f', '#063451'); // Blue
+    storeColor = ['#0071b2', '#004e7f', '#063451'];
   } else if (possibleColors[6].checked === true) {
     changeColor('#a55697', '#821865', '#7c2969'); // Purple
+    storeColor = ['#a55697', '#821865', '#7c2969'];
   }
+  localStorage['colors'] = JSON.stringify(storeColor);
+  localStorage.colorStored = true;
 }
 
 function changeColor(gradient1, gradient2, shadow) {
@@ -96,6 +106,12 @@ function changeColor(gradient1, gradient2, shadow) {
   templatesSection.style.textShadow = '1px 1px 3px ' + shadow;
   colorsSection.style.textShadow = '1px 1px 3px ' + shadow;
   aboutUsSection.style.textShadow = '1px 1px 3px ' + shadow;
+}
+
+// Checks Stored Colors
+if (localStorage.colorStored) {
+  storeColor = JSON.parse(localStorage['colors']);
+  changeColor(storeColor[0], storeColor[1], storeColor[2]);
 }
 
 // Navigation Event Listeners

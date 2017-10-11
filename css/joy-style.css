@@ -292,6 +292,9 @@ footer:hover {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.colorMargin {
   margin: 0 20px;
 }
 
@@ -302,7 +305,7 @@ footer:hover {
 
 @keyframes slide-left {
   from { margin-right: -200%; }
-  to { margin-right: 0; }
+  to { margin-right: 30px; }
 }
 
 @keyframes slide-right {
