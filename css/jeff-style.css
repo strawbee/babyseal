@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: linear-gradient(#bb0000, #690000);
+  background: linear-gradient(#454C52, #666F78);
   font-family: Raleway;
   line-height: 2em;
   margin: auto;
@@ -70,7 +70,7 @@ section {
 h1 {
   font-size: 36px;
   margin-bottom: 15px;
-  text-shadow: 0 0 1px 630e0e;
+  text-shadow: 0 0 1px #630e0e;
 }
  h2 {
    font-size: 2em;
@@ -154,45 +154,56 @@ img:hover {
 }
 
 .defaultColor {
-  color: #a31111;
+  color: #454C52;
   margin-right: 82%;
   margin-left: 3px;
+  font-weight: 900;
+
 }
 
 .red {
-  color: #a31111;
+  color: #BB0000;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
+
 }
 
 .orange {
-  color: #ad5c00;
+  color: #D14800;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
+
 }
 
 .yellow {
-  color: #6d7700;
+  color: #FFE100;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
+
 }
 
 .green {
-  color: #047c00;
+  color: #008705;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
 }
 
 .blue {
-  color: #005470;
+  color: #3D5091;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
 }
 
 .purple {
-  color: #54006d;
+  color: #680078;
   margin-right: 10px;
   margin-left: 3px;
+  font-weight: 900;
 }
 
 .defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
