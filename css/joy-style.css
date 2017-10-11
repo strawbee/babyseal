@@ -125,8 +125,8 @@ section {
   text-shadow: 1px 1px 3px #057287;
   overflow: scroll;
   border-radius: 20px;
-  /*background: #000;
-  opacity: 0.8;*/
+  opacity: 1.0;
+  /*background: #000; */
 }
 
 h2 {
@@ -219,6 +219,10 @@ button:focus {
   margin-left: 0;
 }
 
+#backgroundsForm {
+  text-align: center;
+}
+
 input {
   border: solid 2px #000;
   border-radius: 5px;
@@ -286,7 +290,15 @@ footer:hover {
   opacity: 1;
 }
 
-#templatesSection, #aboutUsSection, #colorsSection, #templatesInstructions, #colorsInstructions {
+#templatesSection, #aboutUsSection, #colorsSection, #templatesInstructions, #colorsInstructions, #backgroundsSection {
+  display: none;
+}
+
+#sethNav {
+  display: none;
+}
+
+.tab {
   display: none;
 }
 
