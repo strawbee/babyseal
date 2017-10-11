@@ -24,6 +24,19 @@ var allTemplates = [
   'css/jeff-style.css'
 ];
 
+var joyAllBackgrounds = [
+  'images/joy-bgs/default.jpg',
+  'images/joy-bgs/red.jpg',
+  'images/joy-bgs/orange.jpg',
+  'images/joy-bgs/yellow.jpg',
+  'images/joy-bgs/green.jpg',
+  'images/joy-bgs/blue.jpg',
+  'images/joy-bgs/purple.jpg'
+];
+
+var joyActiveBackground = joyAllBackgrounds[0];
+
+
 /* ==================================== TEMPLATES ==================================== */
 
 // Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to true and reload page.
@@ -148,7 +161,7 @@ function templatesNext() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'block';
     templatesSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-left';
+    colorsSection.style.animationName = 'slide-down';
     colorsSection.style.animationDuration = '1.5s';
   }
 }
@@ -158,7 +171,7 @@ function colorsPrevious() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     templatesSection.style.display = 'block';
     colorsSection.style.display = 'none';
-    templatesSection.style.animationName = 'slide-right';
+    templatesSection.style.animationName = 'slide-down';
     templatesSection.style.animationDuration = '1.5s';
   }
 }
@@ -168,7 +181,7 @@ function colorsNext() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'none';
     backgroundsSection.style.display = 'block';
-    backgroundsSection.style.animationName = 'slide-left';
+    backgroundsSection.style.animationName = 'slide-down';
     backgroundsSection.style.animationDuration = '1.5s';
   }
 }
@@ -178,7 +191,7 @@ function backgroundsPrevious() {
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     colorsSection.style.display = 'block';
     backgroundsSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-right';
+    colorsSection.style.animationName = 'slide-down';
     colorsSection.style.animationDuration = '1.5s';
   }
 }
@@ -196,17 +209,6 @@ document.getElementById('getCodeButton').addEventListener('click', function() { 
 
 /* ==================================== Colors & Backgrounds ==================================== */
 
-var joyAllBackgrounds = [
-  'images/joy-bgs/default.jpg',
-  'images/joy-bgs/red.jpg',
-  'images/joy-bgs/orange.jpg',
-  'images/joy-bgs/yellow.jpg',
-  'images/joy-bgs/green.jpg',
-  'images/joy-bgs/blue.jpg',
-  'images/joy-bgs/purple.jpg'
-];
-
-var joyActiveBackground = joyAllBackgrounds[0];
 
 // Global function to call upon clicking apply colors
 
@@ -310,7 +312,6 @@ function applyColors(event) {
     sethStoreColor = ['blue', 'blue'];
     joyActiveBackground = joyAllBackgrounds[5];
 
-
   // Purple
   } else if (possibleColors[6].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
@@ -326,6 +327,11 @@ function applyColors(event) {
     jeffStoreColor = ['#680078', '#9A00B8'];
     sethStoreColor = ['purple', 'purple'];
     joyActiveBackground = joyAllBackgrounds[6];
+  }
+
+  // Backgrounds
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    joyCheckBackground();
   }
 
   // Sends stored colors for each template to local storage
@@ -404,13 +410,19 @@ function joyYesBackground() {
 }
 
 function joyNoBackground() {
-  wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ') fixed';
+  wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ')';
   wrapper.style.backgroundSize = 'cover';
   wrapper.style.backgroundAttachment = 'fixed';
   for (var l = 0; l < section.length; l++) {
     section[l].style.opacity = '1.0';
     section[l].style.background = 'inherit';
   }
+}
+
+function joyCheckBackground() {
+  if (localStorage.backgroundStored === 'true') {
+    joyYesBackground();
+  } else { joyNoBackground(); }
 }
 
 // Pulls stored colors and backgrounds for each template from local storage, and applies the correct color function depending on which template is active
@@ -421,9 +433,7 @@ if (localStorage.colorStored) {
   joyActiveBackground = localStorage['joyBackground'];
   if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     joyChangeColor(joyStoreColor[0], joyStoreColor[1], joyStoreColor[2]);
-    if (localStorage.backgroundStored === 'true') {
-      joyYesBackground();
-    } else { joyNoBackground(); }
+    joyCheckBackground();
   }
   if (activeTemplate === allTemplates[2]) {
     sethChangeColor(sethStoreColor[0], sethStoreColor[1]);
