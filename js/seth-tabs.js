@@ -1,22 +1,44 @@
 'use strict'
 
-function openCity(evt, navTab) {
+function openTab (evt, navTab) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
+  tabcontent = document.getElementsByClassName('tabcontent');
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
+    tabcontent[i].style.display = 'none';
   }
 
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
+  // Get all elements with class='tablinks' and remove the class 'active'
+  tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(' active', ' ');
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(navTab).style.display = "block";
-  evt.currentTarget.className += " active";
+  document.getElementById(navTab).style.display = 'block';
+  evt.currentTarget.className += ' active';
 };
+
+//-----------------------------------------------------------
+//            EVENT HANDLERS
+//-----------------------------------------------------------
+
+//Teamplate loading is handled by script.js
+loadNewColor = function (e) {
+
+//take radio button selection and load the chosen color theme!
+if (document.getElementById('colorsRed').checked = true) {
+  //change colors of DOM elements
+  
+}
+
+}
+
+//-----------------------------------------------------------
+//            EVENT LISTENERS
+//-----------------------------------------------------------
+
+var oneEl = document.getElementById('applyColorsButton');
+oneEl.addEventListener('sumbit', loadNewColor);
