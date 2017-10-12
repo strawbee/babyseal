@@ -147,6 +147,10 @@ function goHome() {
     aboutUsLink.style.backgroundColor = '';
     chooseLayoutLink.style.backgroundColor = '';
   }
+
+  // if (activeTemplate === allTemplates[2]) {
+  //
+  // }
 }
 
 // Nav: About Us Link
@@ -415,7 +419,13 @@ function joyChangeColor(gradient1, gradient2, shadow) {
 
 function sethChangeColor(background, tabs) {
   body.style.backgroundColor = background;
-  // console.log('Active Tab: ', document.getElementById('activeTab'));
+  var tablinks = document.getElementsByClassName('tablinks');
+  for (var i = 0; i < tablinks.length; i++) {
+    // tablinks[i].className = ' ';
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
+    tablinks[i].style.backgroundColor = '#f1f1f1';
+  }
+  document.getElementById('activeTab').style.backgroundColor = tabs;
   document.getElementById('navTab1').style.backgroundColor = tabs;
   document.getElementById('navTab2').style.backgroundColor = tabs;
   document.getElementById('navTab3').style.backgroundColor = tabs;
