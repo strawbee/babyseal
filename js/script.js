@@ -66,13 +66,13 @@ var joyAllBackgrounds = [
 ];
 
 var jeffAllBackgrounds = [
-  'images/jeff-bgs/default.jpg',
-  'images/jeff-bgs/red.jpg',
-  'images/jeff-bgs/orange.jpg',
-  'images/jeff-bgs/yellow.jpg',
-  'images/jeff-bgs/green.jpg',
-  'images/jeff-bgs/blue.jpg',
-  'images/jeff-bgs/purple.jpg'
+  'images/jeff-bgs/default.png',
+  'images/jeff-bgs/red.png',
+  'images/jeff-bgs/orange.png',
+  'images/jeff-bgs/yellow.png',
+  'images/jeff-bgs/green.png',
+  'images/jeff-bgs/blue.png',
+  'images/jeff-bgs/purple.png'
 ];
 
 var sethAllBackgrounds = [
