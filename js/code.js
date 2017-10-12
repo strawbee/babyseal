@@ -7,26 +7,25 @@ var allTemplates = [
   'css/jeff-style.css'
 ];
 
-var activeTemplate;
-
-var joyHTML = document.getElementById('joyHTML');
-var sethHTML = document.getElementById('sethHTML');
-var jeffHTML = document.getElementById('jeffHTML');
-
-// Runs this code again in case the person never goes to index and for some reason starts at code.html
 if (localStorage.templateStored === 'true') {
   activeTemplate = localStorage['template'];
 } else {
   activeTemplate = allTemplates[0];
 }
 
-// Template Conditional Variables
 var joyTemplate = activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1];
 var joyTemplate1 = activeTemplate === allTemplates[0];
 var joyTemplate2 = activeTemplate === allTemplates[1];
 var sethTemplate = activeTemplate === allTemplates[2];
 var jeffTemplate = activeTemplate === allTemplates[3];
 
+var joyColors = [];
+var sethColors = [];
+var jeffColors = [];
+
+var joyHTML = document.getElementById('joyHTML');
+var sethHTML = document.getElementById('sethHTML');
+var jeffHTML = document.getElementById('jeffHTML');
 var instructionsNav = document.getElementById('instructionsNav');
 var htmlNav = document.getElementById('htmlNav');
 var cssNav = document.getElementById('cssNav');
@@ -37,6 +36,29 @@ var cssOutput = document.getElementById('cssOutput');
 var jsOutput = document.getElementById('jsOutput');
 var cssH3 = document.getElementById('cssH3');
 var jsH3 = document.getElementById('jsH3');
+var activeTemplate, joyActiveBackground, sethActiveBackground, jeffActiveBackground;
+
+/* =============================== CHECKING LOCAL STORAGE =============================== */
+
+if (localStorage.colorStored === 'true') {
+  joyColors = localStorage['joyColors'];
+  sethColors = localStorage['sethColors'];
+  jeffColors = localStorage['jeffColors'];
+} else {
+  joyColors = ['#4ec3d8', '#07a4c1', '#057287'];
+  sethColors = ['#2E7C52', '#73AF8F'];
+  jeffColors = ['#49494C', '#666F78'];
+}
+
+if (localStorage.backgroundStored === 'true') {
+  joyActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['joyBackground'] + '\');';
+  sethActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['sethBackground'] + '\');';
+  jeffActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['jeffBackground'] + '\');';
+} else {
+  joyActiveBackground = 'linear-gradient(' + joyColors[0] + ', ' + joyColors[1] + ') fixed;';
+  sethActiveBackground = sethColors[0];
+  jeffActiveBackground = 'linear-gradient(' + jeffColors[0] + ', ' + jeffColors[1] + ') fixed;';
+}
 
 /* =============================== OUTPUTS RELEVANT HTML CODE =============================== */
 
@@ -55,20 +77,6 @@ if (joyTemplate) {
 }
 
 /* =============================== OUTPUTS RELEVANT CSS CODE =============================== */
-
-var joyColors = [];
-var sethColors = [];
-var jeffColors = [];
-
-if (localStorage.colorStored === 'true') {
-  joyColors = localStorage['joyColors'];
-  sethColors = localStorage['sethColors'];
-  jeffColors = localStorage['jeffColors'];
-} else {
-  joyColors = ['#4ec3d8', '#07a4c1', '#057287'];
-  sethColors = ['#2E7C52', '#73AF8F'];
-  jeffColors = ['#49494C', '#666F78'];
-}
 
 if (joyTemplate1) {
   cssH3.textContent = 'Template 1 (Top Nav Fixed)';
@@ -109,7 +117,7 @@ if (joyTemplate1) {
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(${joyColors[0]}, ${joyColors[1]}) fixed;
+    background: ${joyActiveBackground}
     background-attachment: fixed;
     background-size: cover;
     display: flex;
@@ -340,7 +348,7 @@ else if (joyTemplate2) {
     left: 0;
     min-height: 100vh;
     min-width: 100vw;
-    background: linear-gradient(${joyColors[0]}, ${joyColors[1]}) fixed;
+    background: ${joyActiveBackground}
     background-size: cover;
     background-attachment: fixed;
     display: flex;
