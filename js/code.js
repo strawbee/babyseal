@@ -41,9 +41,9 @@ var activeTemplate, joyActiveBackground, sethActiveBackground, jeffActiveBackgro
 /* =============================== CHECKING LOCAL STORAGE =============================== */
 
 if (localStorage.colorStored === 'true') {
-  joyColors = localStorage['joyColors'];
-  sethColors = localStorage['sethColors'];
-  jeffColors = localStorage['jeffColors'];
+  joyColors = JSON.parse(localStorage['joyColors']);
+  sethColors = JSON.parse(localStorage['sethColors']);
+  jeffColors = JSON.parse(localStorage['jeffColors']);
 } else {
   joyColors = ['#4ec3d8', '#07a4c1', '#057287'];
   sethColors = ['#2E7C52', '#73AF8F'];
@@ -554,7 +554,7 @@ else if (sethTemplate) {
   @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
   body {
     font-family: Raleway, sans-serif;
-    background-color: ${sethActiveBackground};
+    background-color: ${sethActiveBackground}
   }
 
   #wrapper {
@@ -636,8 +636,8 @@ else if (sethTemplate) {
   }
   /* Create an active/current tablink class */
   .tab button.active {
-      background-color: ${sethActiveBackground};
-      border-bottom-color: #F9DAB8;
+      background-color: ${sethColors[1]};
+      border-bottom-color: ${sethColors[1]};
   }
   /* Style the tab content */
   .tabcontent {
@@ -646,13 +646,17 @@ else if (sethTemplate) {
       padding: 20px 20px;
       border: 4px solid #ccc;
       border-top: none;
-      background-color: #F9DAB8;
+      background-color: ${sethColors[1]};
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
   }
   /*Display on Default*/
   #navTab1 {
     display: block;
+  }
+
+  #sethHomeLink {
+    background-color: ${sethColors[1]};
   }
 
   .tabcontent {
@@ -794,7 +798,7 @@ if (sethTemplate) {
     document.getElementById('navTab1').style.display = 'block';
     document.getElementById('navTab2').style.display = 'none';
     document.getElementById('navTab3').style.display = 'none';
-    sethHomeLink.style.background = ${sethColors[1]};
+    sethHomeLink.style.background = '${sethColors[1]}';
     sethAboutUsLink.style.background = '#f1f1f1';
     sethChooseLayoutLink.style.background = '#f1f1f1';
   }
@@ -804,17 +808,17 @@ if (sethTemplate) {
     document.getElementById('navTab1').style.display = 'none';
     document.getElementById('navTab2').style.display = 'block';
     document.getElementById('navTab3').style.display = 'none';
-    sethAboutUsLink.style.background = ${sethColors[1]};
+    sethAboutUsLink.style.background = '${sethColors[1]}';
     sethChooseLayoutLink.style.background = '#f1f1f1';
     sethHomeLink.style.background = '#f1f1f1';
   }
 
-  // Nav: Choose Layout Link
-  function loadTemplates() {
+  // Nav: Third Link
+  function thirdLink() {
     document.getElementById('navTab1').style.display = 'none';
     document.getElementById('navTab2').style.display = 'none';
     document.getElementById('navTab3').style.display = 'block';
-    sethChooseLayoutLink.style.background = ${sethColors[1]};
+    sethChooseLayoutLink.style.background = '${sethColors[1]}';
     sethAboutUsLink.style.background = '#f1f1f1';
     sethHomeLink.style.background = '#f1f1f1';
   }
@@ -824,7 +828,7 @@ if (sethTemplate) {
   // Navigation Event Listeners
   sethHomeLink.addEventListener('click', goHome);
   sethAboutUsLink.addEventListener('click', aboutUs);
-  sethChooseLayoutLink.addEventListener('click', loadTemplates);
+  sethChooseLayoutLink.addEventListener('click', thirdLink);
 `;
 }
 
