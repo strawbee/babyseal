@@ -538,6 +538,157 @@ else if (joyTemplate2) {
   }
   `;
 }
+else if (sethTemplate) {
+  cssH3.textContent = 'Template 2 (Side Nav Fixed)';
+  document.getElementById('joyCSS1').textContent = `
+  /*Style Sheet of Folders Template */
+  @import url("https://fonts.googleapis.com/css?family=Raleway");
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+  body {
+    font-family: Raleway, sans-serif;
+    background-color: ${sethActiveBackground};
+  }
+
+  #wrapper {
+    position: relative;
+    height: 100vh;
+  }
+
+  header {
+    font-size: 35px;
+    padding: 20px;
+    height: 40px;
+    background-color: #001409;
+    color: #DDEDE5;
+    box-shadow: 0px 3px 3px 3px rgba(10, 10, 10, .8);
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  h1 {
+      position: absolute;
+      left: -300px;
+      -webkit-animation: slide 0.5s forwards;
+      -webkit-animation-delay: .25s;
+      animation: slide 0.5s forwards;
+      animation-delay: .5s;
+  }
+
+  h2 {
+    margin: 20px;
+  }
+
+  @-webkit-keyframes slide {
+      100% { left: 0; }
+  }
+
+  @keyframes slide {
+      100% { left: 50%; }
+  }
+
+  nav {
+    margin: 50px 0 0 5%;
+    width: 90%;
+  }
+
+  /* Style the tab */
+  nav .tab {
+    display: inline-block;
+    margin: 0 0 -3px 0;
+  }
+
+  #shadowDiv {
+    top: 135px;
+    width: 90%;
+    margin: 0 0 50px 5%;
+    box-shadow:  10px 10px 10px rgba(10, 10, 10, .8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  /* Style the buttons inside the tab */
+  .tab button {
+    font-size: 20px;
+    border-bottom: none;
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    background-color: #f1f1f1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 4px 4px 0 4px;
+    border-color: #ccc;
+    border-bottom-width: 3px;
+    border-bottom-color: #ccc;
+  }
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+      background-color: #a9a9a9;
+  }
+  /* Create an active/current tablink class */
+  .tab button.active {
+      background-color: ${sethActiveBackground};
+      border-bottom-color: #F9DAB8;
+  }
+  /* Style the tab content */
+  .tabcontent {
+    font-size: 18px;
+      display: none;
+      padding: 20px 20px;
+      border: 4px solid #ccc;
+      border-top: none;
+      background-color: #F9DAB8;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+  }
+  /*Display on Default*/
+  #navTab1 {
+    display: block;
+  }
+
+  .tabcontent {
+      -webkit-animation: fadeEffect 1.5s;
+      animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
+  }
+  @-webkit-keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+  @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+
+  #thirdSection img {
+    vertical-align: middle;
+    text-align: center;
+    width: 15%;
+    height: auto;
+    margin: 2% 3% 1% 1%;/*20px 30px 10px 10px*/
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #057287;
+  }
+
+  #thirdSection img:hover {
+    box-shadow: 4px 4px 4px #222;
+  }
+
+  footer {
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px auto;
+    bottom: 0;
+    width: 250px;
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 4px 4px 4px rgba(10, 10, 10, .8);
+    border-radius: 10px;
+    border: 4px solid #ccc;
+  }
+  `;
+}
 
 /* ============================== OUTPUTS RELEVANT JAVASCRIPT CODE ============================== */
 
@@ -618,7 +769,56 @@ if (joyTemplate) {
 }
 
 
+if (sethTemplate) {
+  jsH3.textContent = 'Template 3 (Folders)'
+  document.getElementById('sethJS').textContent = `
 
+  'use strict';
+
+  var sethHomeLink = document.getElementById('sethHomeLink');
+  var sethAboutUsLink = document.getElementById('sethAboutUsLink');
+  var sethChooseLayoutLink = document.getElementById('sethChooseLayoutLink');
+
+  /* ================================== NAV AND BUTTONS FUNCTIONS ================================== */
+
+  // Nav: Home Link
+  function goHome() {
+    document.getElementById('navTab1').style.display = 'block';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'none';
+    sethHomeLink.style.background = ${sethColors[1]};
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethChooseLayoutLink.style.background = '#f1f1f1';
+  }
+
+  // Nav: About Us Link
+  function aboutUs() {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'block';
+    document.getElementById('navTab3').style.display = 'none';
+    sethAboutUsLink.style.background = ${sethColors[1]};
+    sethChooseLayoutLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
+  }
+
+  // Nav: Choose Layout Link
+  function loadTemplates() {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'block';
+    sethChooseLayoutLink.style.background = ${sethColors[1]};
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
+  }
+
+  /* ==================================== EVENT LISTENERS ==================================== */
+
+  // Navigation Event Listeners
+  sethHomeLink.addEventListener('click', goHome);
+  sethAboutUsLink.addEventListener('click', aboutUs);
+  sethChooseLayoutLink.addEventListener('click', loadTemplates);
+`;
+}
 
 
 
