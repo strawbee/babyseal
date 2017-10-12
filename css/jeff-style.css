@@ -98,7 +98,10 @@ footer {
 #aboutUsSection img {
   float: left;
   margin-right: 20px;
-} 
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+}
 
 #wrapper {
   margin: 50px auto 0 auto;
@@ -113,6 +116,11 @@ footer {
 
 #templatesInstructions {
   text-align: center;
+}
+
+#templatesSection img {
+  width: 200px;
+  height: 200px;
 }
 
 button {

@@ -16,6 +16,7 @@ var body = document.querySelector('body');
 var section = document.querySelectorAll('section');
 var joyStoreColor, jeffStoreColor, sethStoreColor;
 var stylesheets = document.querySelectorAll('link');
+var possibleTemplates = document.getElementsByName('templatesRadioButton');
 var activeTemplate, joyTemplate, sethTemplate, jeffTemplate;
 
 var allTemplates = [
@@ -94,7 +95,6 @@ var jeffActiveBackground = jeffAllBackgrounds[0];
 // Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to 'true' and reload page.
 function applyTemplates(event) {
   event.preventDefault();
-  var possibleTemplates = document.getElementsByName('templatesRadioButton');
   localStorage.startAtTemplate = 'true';
   for (var radio = 0; radio < allTemplates.length; radio++) {
     if (possibleTemplates[radio].checked === true) {
@@ -528,6 +528,12 @@ document.getElementById('colorsForm').addEventListener('submit', applyColors);
 
 // Apply Background Event Listeners
 backgroundsForm.addEventListener('submit', applyBackgrounds);
+
+// When images in templates section are clicked, select the radio button
+document.getElementById('template1Image').addEventListener('click', function() { possibleTemplates[0].checked = true; });
+document.getElementById('template2Image').addEventListener('click', function() { possibleTemplates[1].checked = true; });
+document.getElementById('template3Image').addEventListener('click', function() { possibleTemplates[2].checked = true; });
+document.getElementById('template4Image').addEventListener('click', function() { possibleTemplates[3].checked = true; });
 
 // Joy's Nav Mouseovers
 if (joyTemplate) {
