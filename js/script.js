@@ -63,7 +63,7 @@ var jeffActiveBackground = jeffAllBackgrounds[0];
 
 /* ==================================== TEMPLATES FUNCTION ==================================== */
 
-// Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to true and reload page.
+// Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to 'true' and reload page.
 function applyTemplates(event) {
   event.preventDefault();
   var possibleTemplates = document.getElementsByName('templatesRadioButton');
@@ -78,153 +78,6 @@ function applyTemplates(event) {
   }
 }
 
-
-/* ================================== NAV AND BUTTONS FUNCTIONS ================================== */
-
-// Nav: Home Link
-function goHome() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#wrapper';
-  }
-  else if (activeTemplate === allTemplates[2]) {
-    document.getElementById('navTab1').style.display = 'block';
-    document.getElementById('navTab2').style.display = 'none';
-    document.getElementById('navTab3').style.display = 'none';
-    templatesSection.style.display = 'none';
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    aboutUsSection.style.display = 'none';
-    sethHomeLink.style.background = sethStoreColor[1];
-    sethAboutUsLink.style.background = '#f1f1f1';
-    sethChooseLayoutLink.style.background = '#f1f1f1';
-  }
-  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-    header.style.display = 'block';
-    templatesSection.style.display = 'none';
-    colorsSection.style.display = 'none';
-    aboutUsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    header.style.animationName = 'slide-up';
-    header.style.animationDuration = '1.5s';
-    homeLink.style.backgroundColor = '#333';
-    aboutUsLink.style.backgroundColor = '';
-    chooseLayoutLink.style.backgroundColor = '';
-  }
-}
-
-// Nav: About Us Link
-function aboutUs() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#aboutUsSection';
-  }
-  else if (activeTemplate === allTemplates[2]) {
-    document.getElementById('navTab1').style.display = 'none';
-    document.getElementById('navTab2').style.display = 'block';
-    document.getElementById('navTab3').style.display = 'none';
-    templatesSection.style.display = 'none';
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    aboutUsSection.style.display = 'inline';
-    sethAboutUsLink.style.background = sethStoreColor[1];
-    sethChooseLayoutLink.style.background = '#f1f1f1';
-    sethHomeLink.style.background = '#f1f1f1';
-  }
-  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-    aboutUsSection.style.display = 'block';
-    header.style.display = 'none';
-    templatesSection.style.display = 'none';
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    aboutUsSection.style.animationName = 'slide-down';
-    aboutUsSection.style.animationDuration = '1.5s';
-    homeLink.style.backgroundColor = '';
-    aboutUsLink.style.backgroundColor = '#333';
-    chooseLayoutLink.style.backgroundColor = '';
-  }
-}
-
-// Nav: Choose Layout Link
-function loadTemplates() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#templatesSection';
-  }
-  else if (activeTemplate === allTemplates[2]) {
-    document.getElementById('navTab1').style.display = 'none';
-    document.getElementById('navTab2').style.display = 'none';
-    document.getElementById('navTab3').style.display = 'block';
-    templatesSection.style.display = 'inline';
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    aboutUsSection.style.display = 'none';
-    sethChooseLayoutLink.style.background = sethStoreColor[1];
-    sethAboutUsLink.style.background = '#f1f1f1';
-    sethHomeLink.style.background = '#f1f1f1';
-  }
-  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-    templatesSection.style.display = 'block';
-    header.style.display = 'none';
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'none';
-    aboutUsSection.style.display = 'none';
-    templatesSection.style.animationName = 'slide-down';
-    templatesSection.style.animationDuration = '1.5s';
-    homeLink.style.backgroundColor = '';
-    aboutUsLink.style.backgroundColor = '';
-    chooseLayoutLink.style.backgroundColor = '#333';
-  }
-}
-
-// Button: going to colors section from the templates section
-function templatesNext() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#colorsSection';
-  } else {
-    colorsSection.style.display = 'block';
-    templatesSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-down';
-    colorsSection.style.animationDuration = '1.5s';
-  }
-}
-
-// Button: going back to templates section from color section
-function colorsPrevious() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#templatesSection';
-  } else {
-    templatesSection.style.display = 'block';
-    colorsSection.style.display = 'none';
-    templatesSection.style.animationName = 'slide-down';
-    templatesSection.style.animationDuration = '1.5s';
-  }
-}
-
-// Button: going to backgrounds section from color section
-function colorsNext() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#backgroundsSection';
-  } else {
-    colorsSection.style.display = 'none';
-    backgroundsSection.style.display = 'block';
-    backgroundsSection.style.animationName = 'slide-down';
-    backgroundsSection.style.animationDuration = '1.5s';
-  }
-}
-
-// Button: going from backgrounds section back to color section
-function backgroundsPrevious() {
-  if (activeTemplate === allTemplates[3]) {
-    window.location.href = '#colorsSection';
-  } else {
-    colorsSection.style.display = 'block';
-    backgroundsSection.style.display = 'none';
-    colorsSection.style.animationName = 'slide-down';
-    colorsSection.style.animationDuration = '1.5s';
-  }
-}
-
-
-
-
 /* =============================== COLORS & BACKGROUND FUNCTIONS =============================== */
 
 // Global function to call upon clicking apply colors
@@ -232,7 +85,7 @@ function applyColors(event) {
   event.preventDefault();
   var possibleColors = document.getElementsByName('colorsRadioButton');
 
-  // Default Color - calls individual color function depending on the active template, then stores the selected colors for each template.
+  // Default Color - calls individual color function depending on the active template, then stores the selected colors and applicable background for each template.
   if (possibleColors[0].checked === true) {
     if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
       joyChangeColor('#4ec3d8', '#07a4c1', '#057287');
@@ -372,7 +225,6 @@ function applyColors(event) {
     jeffCheckBackground();
   }
 
-
   // Sends stored colors for each template to local storage
   localStorage['joyColors'] = JSON.stringify(joyStoreColor);
   localStorage['jeffColors'] = JSON.stringify(jeffStoreColor);
@@ -380,19 +232,13 @@ function applyColors(event) {
   localStorage['joyBackground'] = joyActiveBackground;
   localStorage['jeffBackground'] = jeffActiveBackground;
   localStorage['sethBackground'] = sethActiveBackground;
-  localStorage.colorStored = true;
+  localStorage.colorStored = 'true';
 }
 
 // Individualized color functions
 
 function joyChangeColor(gradient1, gradient2, shadow) {
   wrapper.style.background = 'linear-gradient(' + gradient1 + ', ' + gradient2 + ') fixed';
-  homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = shadow; });
-  homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
-  aboutUsLink.addEventListener('mouseover', function() { this.style.backgroundColor = shadow; });
-  aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
-  chooseLayoutLink.addEventListener('mouseover', function() { this.style.backgroundColor = shadow; });
-  chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
   document.querySelector('h1').style.textShadow = '2px 2px 4px ' + shadow;
   document.getElementById('headerInstructions').style.textShadow = '2px 2px 3px ' + shadow;
   document.getElementById('headerNext').style.textShadow = '2px 2px 3px ' + shadow;
@@ -416,7 +262,7 @@ function jeffChangeColor(gradientA, gradientB) {
   body.style.background = 'linear-gradient(' + gradientA + ', ' + gradientB + ')';
 }
 
-// Background Functions
+// General Background Function
 
 function applyBackgrounds() {
   event.preventDefault();
@@ -429,11 +275,11 @@ function applyBackgrounds() {
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyYesBackground();
       }
-
+      // If yes background on Seth's template
       if (activeTemplate === allTemplates[2]) {
         sethYesBackground();
       }
-
+      // if yes background on Jeff's template
       if (activeTemplate === allTemplates[3]) {
         jeffYesBackground();
       }
@@ -444,11 +290,11 @@ function applyBackgrounds() {
       if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
         joyNoBackground();
       }
-
+      // If no background on Seth's template
       if (activeTemplate === allTemplates[2]) {
         sethNoBackground();
       }
-
+      // If no background on Jeff's template
       if (activeTemplate === allTemplates[3]) {
         jeffNoBackground();
       }
@@ -456,10 +302,11 @@ function applyBackgrounds() {
   }
 }
 
+// Individual Background Functions
+
 function joyYesBackground() {
-  wrapper.style.background = 'url("' + joyActiveBackground + '")';
+  wrapper.style.background = 'url("' + joyActiveBackground + '") fixed';
   wrapper.style.backgroundSize = 'cover';
-  wrapper.style.backgroundAttachment = 'fixed';
   for (var k = 0; k < section.length; k++) {
     section[k].style.opacity = '0.8';
     section[k].style.background = '#000';
@@ -467,9 +314,8 @@ function joyYesBackground() {
 }
 
 function joyNoBackground() {
-  wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ')';
+  wrapper.style.background = 'linear-gradient(' + joyStoreColor[0] + ', ' + joyStoreColor[1] + ') fixed';
   wrapper.style.backgroundSize = 'cover';
-  wrapper.style.backgroundAttachment = 'fixed';
   for (var l = 0; l < section.length; l++) {
     section[l].style.opacity = '1.0';
     section[l].style.background = 'inherit';
@@ -483,16 +329,13 @@ function joyCheckBackground() {
 }
 
 function sethYesBackground() {
-  body.style.background = 'url("' + sethActiveBackground + '")';
+  body.style.background = 'url("' + sethActiveBackground + '") fixed';
   body.style.backgroundSize = 'cover';
-  body.style.backgroundAttachment = 'fixed';
 }
 
 function sethNoBackground() {
   body.style.background = ' ';
   body.style.background = sethStoreColor[0];
-  body.style.backgroundSize = 'cover';
-  body.style.backgroundAttachment = 'fixed';
 }
 
 function sethCheckBackground() {
@@ -502,9 +345,8 @@ function sethCheckBackground() {
 }
 
 function jeffYesBackground() {
-  body.style.background = 'url("' + jeffActiveBackground + '")';
+  body.style.background = 'url("' + jeffActiveBackground + '") fixed';
   body.style.backgroundSize = 'cover';
-  body.style.backgroundAttachment = 'fixed';
 }
 
 function jeffNoBackground() {
@@ -517,7 +359,160 @@ function jeffCheckBackground() {
   } else { jeffNoBackground(); }
 }
 
+/* ================================== NAV AND BUTTONS FUNCTIONS ================================== */
 
+// Nav: Home Link
+function goHome() {
+  localStorage['onTemplatesPage'] = 'false';
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#wrapper';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'block';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    sethHomeLink.style.background = sethStoreColor[1];
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethChooseLayoutLink.style.background = '#f1f1f1';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    header.style.display = 'block';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    header.style.animationName = 'slide-up';
+    header.style.animationDuration = '1.5s';
+    homeLink.style.backgroundColor = '#333';
+    aboutUsLink.style.backgroundColor = '#000';
+    chooseLayoutLink.style.backgroundColor = '#000';
+    homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
+    aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+    chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+  }
+}
+
+// Nav: About Us Link
+function aboutUs() {
+  localStorage['onTemplatesPage'] = 'false';
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#aboutUsSection';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'block';
+    document.getElementById('navTab3').style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'inline';
+    sethAboutUsLink.style.background = sethStoreColor[1];
+    sethChooseLayoutLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    aboutUsSection.style.display = 'block';
+    header.style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.animationName = 'slide-down';
+    aboutUsSection.style.animationDuration = '1.5s';
+    homeLink.style.backgroundColor = '#000';
+    aboutUsLink.style.backgroundColor = '#333';
+    chooseLayoutLink.style.backgroundColor = '#000';
+    homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+    aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
+    chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+  }
+}
+
+// Nav: Choose Layout Link
+function loadTemplates() {
+  localStorage['onTemplatesPage'] = 'true';
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#templatesSection';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'block';
+    templatesSection.style.display = 'inline';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    sethChooseLayoutLink.style.background = sethStoreColor[1];
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    templatesSection.style.display = 'block';
+    header.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    templatesSection.style.animationName = 'slide-down';
+    templatesSection.style.animationDuration = '1.5s';
+    homeLink.style.backgroundColor = '#000';
+    aboutUsLink.style.backgroundColor = '#000';
+    chooseLayoutLink.style.backgroundColor = '#333';
+    homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+    aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+    chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
+  }
+}
+
+// Button: going to colors section from the templates section
+function templatesNext() {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#colorsSection';
+  } else {
+    colorsSection.style.display = 'block';
+    templatesSection.style.display = 'none';
+    colorsSection.style.animationName = 'slide-down';
+    colorsSection.style.animationDuration = '1.5s';
+  }
+}
+
+// Button: going back to templates section from color section
+function colorsPrevious() {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#templatesSection';
+  } else {
+    templatesSection.style.display = 'block';
+    colorsSection.style.display = 'none';
+    templatesSection.style.animationName = 'slide-down';
+    templatesSection.style.animationDuration = '1.5s';
+  }
+}
+
+// Button: going to backgrounds section from color section
+function colorsNext() {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#backgroundsSection';
+  } else {
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'block';
+    backgroundsSection.style.animationName = 'slide-down';
+    backgroundsSection.style.animationDuration = '1.5s';
+  }
+}
+
+// Button: going from backgrounds section back to color section
+function backgroundsPrevious() {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#colorsSection';
+  } else {
+    colorsSection.style.display = 'block';
+    backgroundsSection.style.display = 'none';
+    colorsSection.style.animationName = 'slide-down';
+    colorsSection.style.animationDuration = '1.5s';
+  }
+}
 
 /* =============================== STUFF THAT HAPPENS WHEN PAGE LOADS =============================== */
 
@@ -612,3 +607,22 @@ document.getElementById('colorsForm').addEventListener('submit', applyColors);
 
 // Apply Background Event Listeners
 backgroundsForm.addEventListener('submit', applyBackgrounds);
+
+// Joy's Nav Mouseovers
+if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = joyStoreColor[2]; });
+  aboutUsLink.addEventListener('mouseover', function() { this.style.backgroundColor = joyStoreColor[2]; });
+  chooseLayoutLink.addEventListener('mouseover', function() { this.style.backgroundColor = joyStoreColor[2]; });
+  homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
+  aboutUsLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+  chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+}
+if (localStorage['onTemplatesPage'] === 'true') {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    chooseLayoutLink.style.backgroundColor = '#333';
+    homeLink.style.backgroundColor = '#000';
+    homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
+    chooseLayoutLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
+  }
+  localStorage['onTemplatesPage'] = 'false';
+}

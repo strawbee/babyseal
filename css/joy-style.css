@@ -74,6 +74,10 @@ nav li:hover {
   cursor: auto;
 }
 
+#homeLink {
+  background: #333;
+}
+
 header {
   display: block;
   margin: 30px 30px 30px 290px;
