@@ -506,7 +506,7 @@ else if (joyTemplate2) {
 
   footer {
     position: fixed;
-    bottom: 0;
+    bottom: 0;*
     width: 100%;
     background: #222;
     text-align: center;
@@ -539,8 +539,8 @@ else if (joyTemplate2) {
   `;
 }
 else if (sethTemplate) {
-  cssH3.textContent = 'Template 2 (Side Nav Fixed)';
-  document.getElementById('joyCSS1').textContent = `
+  cssH3.textContent = 'Template 3 (Folders)';
+  document.getElementById('sethCSS').textContent = `
   /*Style Sheet of Folders Template */
   @import url("https://fonts.googleapis.com/css?family=Raleway");
   @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
