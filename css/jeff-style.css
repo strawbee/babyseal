@@ -13,6 +13,32 @@ body {
   margin: auto;
 }
 
+#wrapper {
+  margin: 50px auto 0 auto;
+  width: 720px;
+}
+
+header {
+  display: inline-block;
+  float: left;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  width: 71%;
+  color: white;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 1px #630e0e;
+}
+
+#headerInstructions {
+  text-shadow: 0 0 1px #630e0e;
+  margin-bottom: 20px;
+}
+
 a {
   color: #000;
   text-transform: uppercase;
@@ -43,21 +69,6 @@ nav ul li {
   padding: 5px;
 }
 
-header {
-  display: inline-block;
-  float: left;
-  font-size: 22px;
-  padding: 10px;
-  text-align: center;
-  width: 71%;
-  color: white;
-}
-
-#headerInstructions {
-  text-shadow: 0 0 1px #630e0e;
-  margin-bottom: 20px;
-}
-
 section {
   background: white;
   display: inline-block;
@@ -67,32 +78,15 @@ section {
   text-align: justify;
 }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  text-shadow: 0 0 1px #630e0e;
-}
  h2 {
    font-size: 2em;
    text-align: center;
 }
 
-footer {
-  clear: both;
-  display: block;
-  padding: 50px;
-  width: 421px;
-  text-align: center;
-  color: #fff;
-}
 
 #aboutUsSection {
   border-radius: 25px;
   margin-top: 20px;
-}
-#wrapper {
-  margin: 50px auto 0 auto;
-  width: 720px;
 }
 
 #templatesSection {
@@ -137,18 +131,6 @@ button:hover {
   text-align: center;
 }
 
-#backgroundsSection {
-  border-radius: 25px;
-  margin-top: 20px;
-}
-
-#backgroundsInstructions {
-  text-align: center;
-}
-.pageBottomButtons {
-  text-align: center;
-}
-
 img {
   vertical-align: middle;
   margin: 0 10px 10px 3px;
@@ -160,6 +142,20 @@ img:hover {
   box-shadow: 2px 2px 2px #000;
   transform: translate(-1px, -1px)
 }
+
+.pageBottomButtons {
+  text-align: center;
+}
+
+#backgroundsSection {
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+#backgroundsInstructions {
+  text-align: center;
+}
+
 
 .defaultColor {
   color: #454C52;
@@ -216,6 +212,15 @@ img:hover {
 
 .defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
   color: #000;
+}
+
+footer {
+  clear: both;
+  display: block;
+  padding: 50px;
+  width: 421px;
+  text-align: center;
+  color: #fff;
 }
 
 .tab {

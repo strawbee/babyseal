@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(#454C52, #666F78);
+  font-family: Raleway;
+  line-height: 2em;
+  margin: auto;
+}
+
+#wrapper {
+  margin: 50px auto 0 auto;
+  width: 720px;
+}
+
+header {
+  display: inline-block;
+  float: left;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  width: 71%;
+  color: white;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 1px #630e0e;
+}
+
+#headerInstructions {
+  text-shadow: 0 0 1px #630e0e;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: white;
+  padding: 5px;
+  border-radius: 7px;
+  font-weight: 900;
+  font-size: 0.9em;
+}
+
+a:hover {
+  box-shadow: 2px 2px 2px #000;
+  background: #eee;
+}
+
+nav {
+  display: inline-block;
+  float: right;
+  font-size: 17px;
+  margin-top: 20px;
+  padding-left: 5px;
+  width: 26%;
+  color: white;
+}
+
+nav ul li {
+  padding: 5px;
+}
+
+section {
+  background: white;
+  display: inline-block;
+  float: left;
+  padding: 15px 10px;
+  width: 70%;
+  text-align: justify;
+}
+
+ h2 {
+   font-size: 2em;
+   text-align: center;
+}
+
+
+#aboutUsSection {
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+#templatesSection {
+  border-radius: 25px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#templatesInstructions {
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 15px 5px;
+  background: #fff;
+  border: solid 3px #000;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button:hover {
+  box-shadow: 2px 2px 2px #000;
+  background: #eee;
+  transform: translate(-1px, -1px)
+}
+
+#templatesForm {
+  padding: 2%;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+#colorsSection {
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+#colorsInstructions {
+  text-align: center;
+}
+
+img {
+  vertical-align: middle;
+  margin: 0 10px 10px 3px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+img:hover {
+  box-shadow: 2px 2px 2px #000;
+  transform: translate(-1px, -1px)
+}
+
+.pageBottomButtons {
+  text-align: center;
+}
+
+#backgroundsSection {
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+#backgroundsInstructions {
+  text-align: center;
+}
+
+
+.defaultColor {
+  color: #454C52;
+  margin-right: 82%;
+  margin-left: 3px;
+  font-weight: 900;
+
+}
+
+.red {
+  color: #BB0000;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+
+}
+
+.orange {
+  color: #D14800;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+
+}
+
+.yellow {
+  color: #FFE100;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+
+}
+
+.green {
+  color: #008705;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+}
+
+.blue {
+  color: #3D5091;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+}
+
+.purple {
+  color: #680078;
+  margin-right: 10px;
+  margin-left: 3px;
+  font-weight: 900;
+}
+
+.defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
+  color: #000;
+}
+
+footer {
+  clear: both;
+  display: block;
+  padding: 50px;
+  width: 421px;
+  text-align: center;
+  color: #fff;
+}
+
+.tab {
+  display: none;
+}
+
+#navTab1 {
+  display: none;
+}

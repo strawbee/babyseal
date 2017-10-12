@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout Generator</title>
+    <link rel="stylesheet" href="css/reset.css" \>
+    <link rel="stylesheet" href="css/style.css" \>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Layout Generator</h1>
+        <p id="headerInstructions">Welcome to the layout generator. Choose your own design and receive your code.</p>
+        <p id="headerNext"><a id="headerNextLink" href="#">> Let's get started! <</a></p>
+      </header>
+
+      <nav>
+        <ul>
+          <li id="homeLink"><a href="#header">Home</a></li>
+          <li id="aboutUsLink"><a href="#aboutUsSection">About Us</a></li>
+          <li id="chooseLayoutLink"><a href="#templatesSection">Choose Layout</a></li>
+        </ul>
+      </nav>
+
+        <div id="navTab1" class="tabcontent">
+          <h2>Home</h2>
+          <p>HOME  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>            <p>1234567890 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+          <section id="templatesSection">
+            <h2 id="templatesHeader">Template</h2>
+            <p id="templatesInstructions">Choose your template.</p>
+            <form id="templatesForm">
+              <span class="nowrap">
+                <input type="radio" name="templatesRadioButton" id="templates1" /><img src="image/templates/template1.png" />
+              </span>
+
+              <span class="nowrap">
+                <input type="radio" name="templatesRadioButton" id="templates2" /><img src="image/templates/template2.png" />
+              </span>
+
+              <span class="nowrap">
+                <input type="radio" name="templatesRadioButton" id="templates3" /><img src="image/templates/template3.png" />
+              </span>
+
+              <span class="nowrap">
+                <input type="radio" name="templatesRadioButton" id="templates4" /><img src="image/templates/template4.png" />
+              </span>
+
+              <div class="pageBottomButtons">
+                <button type="submit" id="applyTemplateButton">Apply Template</button>
+                <button type="button" id="templatesNextButton">Next: Colors</button>
+              </div>
+            </form>
+          </section>
+
+          <section id="colorsSection">
+            <h2 id="colorsHeader">Colors</h2>
+            <p id="colorsInstructions">Choose your colors.</p>
+            <form id="colorsForm">
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsDefault" /><label for="colorsDefault" class="defaultColor">Default</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsRed" /><label for="colorsRed" class="red">Red</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsOrange" /><label for="colorsOrange" class="orange">Orange</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsYellow" /><label for="colorsYellow" class="yellow">Yellow</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsGreen" /><label for="colorsGreen" class="green">Green</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsBlue" /><label for="colorsBlue" class="blue">Blue</label>
+              </span>
+
+              <span class="nowrap colorMargin">
+                <input type="radio" name="colorsRadioButton" id="colorsPurple" /><label for="colorsPurple" class="purple">Purple</label>
+              </span>
+
+              <div class="pageBottomButtons">
+                <button type="submit" id="applyColorsButton">Apply Colors</button>
+                <button type="button" id="colorsPreviousButton">Back To Templates</button>
+                <button type="button" id="colorsNextButton">Next: Backgrounds</button>
+              </div>
+            </form>
+          </section>
+
+          <section id="backgroundsSection">
+            <h2 id="backgroundsHeader">Backgrounds</h2>
+            <p id="backgroundsInstructions">There is a different background image for each color theme. Adjust your colors to change the image.</p>
+            <form id="backgroundsForm">
+                <input type="radio" name="backgroundsRadioButton" id="backgroundsYes" /><label for="backgroundsYes" class="backgroundsMargin">Use Background Image</label>
+
+                <input type="radio" name="backgroundsRadioButton" id="backgroundsNo" /><label for="backgroundsNo" class="backgroundsMargin">No Background Image</label>
+
+              <div class="pageBottomButtons">
+                <button type="submit" id="applyBackgroundsButton">Apply Background</button>
+                <button type="button" id="backgroundsPreviousButton">Back To Colors</button>
+                <button type="button" id="getCodeButton">Get Code</button>
+              </div>
+            </form>
+          </section>
+
+          <section id="aboutUsSection">
+            <h2 id="aboutUsHeader">About Us</h2>
+            <p>About Us</p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est placerat in egestas erat imperdiet sed euismod nisi porta. Egestas congue quisque egestas diam in arcu. Dictum varius duis at consectetur lorem donec massa sapien. Scelerisque felis imperdiet proin fermentum leo vel. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. In metus vulputate eu scelerisque felis imperdiet. Lacus vel facilisis volutpat est velit egestas. Mauris pharetra et ultrices neque ornare aenean. Non consectetur a erat nam at lectus urna duis convallis. Convallis convallis tellus id interdum velit laoreet id donec. Ut sem nulla pharetra diam. Malesuada nunc vel risus commodo.<br /><br />
+
+            Quam nulla porttitor massa id. Sem integer vitae justo eget magna. Luctus accumsan tortor posuere ac ut consequat semper viverra nam. Fringilla urna porttitor rhoncus dolor purus non. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Et netus et malesuada fames ac. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Quis blandit turpis cursus in hac habitasse platea dictumst. Id faucibus nisl tincidunt eget nullam non nisi. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.
+            <br /><br />
+            Blandit turpis cursus in hac. Egestas quis ipsum suspendisse ultrices gravida dictum. Id donec ultrices tincidunt arcu non. At auctor urna nunc id cursus metus aliquam eleifend mi. Pharetra diam sit amet nisl suscipit adipiscing. Facilisis leo vel fringilla est ullamcorper eget nulla. Morbi blandit cursus risus at ultrices mi. Enim nec dui nunc mattis enim ut tellus elementum. At tellus at urna condimentum. Et molestie ac feugiat sed. Pharetra vel turpis nunc eget lorem. Eget aliquet nibh praesent tristique magna sit amet purus. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Arcu odio ut sem nulla pharetra diam.
+            <br /><br />
+            Dui ut ornare lectus sit amet est placerat. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Ornare arcu dui vivamus arcu felis bibendum ut. Risus commodo viverra maecenas accumsan lacus. Nulla pharetra diam sit amet nisl suscipit adipiscing. Mattis enim ut tellus elementum sagittis vitae et leo. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Auctor urna nunc id cursus metus aliquam. Dignissim sodales ut eu sem. Pretium nibh ipsum consequat nisl vel pretium lectus quam id. Tellus at urna condimentum mattis pellentesque id. Justo nec ultrices dui sapien eget mi proin. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Sit amet nisl purus in mollis nunc sed.
+            <br /><br />
+            Volutpat maecenas volutpat blandit aliquam etiam. Turpis massa tincidunt dui ut ornare lectus sit. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Nec ullamcorper sit amet risus nullam eget felis eget. Amet venenatis urna cursus eget nunc. Lacus luctus accumsan tortor posuere ac ut consequat. Quis ipsum suspendisse ultrices gravida dictum fusce. Ornare lectus sit amet est placerat in egestas erat. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Felis eget nunc lobortis mattis aliquam faucibus purus. Ornare massa eget egestas purus viverra.
+          </section>
+
+      <footer>
+        <p>
+          &copy; Club babySeals 2017
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
