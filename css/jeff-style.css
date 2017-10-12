@@ -90,6 +90,16 @@ footer {
   border-radius: 25px;
   margin-top: 20px;
 }
+
+#aboutUsSection p {
+  margin-bottom: 25px;
+}
+
+#aboutUsSection img {
+  float: left;
+  margin-right: 20px;
+} 
+
 #wrapper {
   margin: 50px auto 0 auto;
   width: 720px;
