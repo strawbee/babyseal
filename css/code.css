@@ -95,14 +95,15 @@ nav li:first-child {
 }
 
 .output a {
-  color: darkgray;
+  background: #eee;
   font-weight: 900;
   letter-spacing: .05em;
   font-size: 1.1em;
+  padding: 4px;
 }
 
 .output a:hover {
-  color: #333;
+  background: darkgray;
 }
 
 h2 {
