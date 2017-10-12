@@ -83,7 +83,6 @@ nav li:first-child {
 .output {
   position: absolute;
   padding: 30px 40px;
-  text-align: justify;
   top: 200px;
   bottom: 50px;
   width: 80%;

@@ -191,6 +191,9 @@ function applyBackgrounds() {
   for (var bg = 0; bg < joyAllBackgrounds.length; bg++) {
     if (possibleBackgrounds[0].checked === true) {
       localStorage.backgroundStored = 'true';
+      localStorage['joyBackground'] = joyActiveBackground;
+      localStorage['jeffBackground'] = jeffActiveBackground;
+      localStorage['sethBackground'] = sethActiveBackground;
       // If yes background on Joy's templates
       if (joyTemplate) {
         joyYesBackground();
