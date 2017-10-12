@@ -214,7 +214,15 @@ nav > ul {
   margin: 50px auto;
 }
 
-#backgroundsSection
+#aboutUsSection p {
+  margin-bottom: 25px;
+  line-height: 1.3em;
+}
+ 
+#aboutUsSection img {
+  float: left;
+  margin-right: 20px;
+}
 
 .nowrap {
   margin: 20px;
