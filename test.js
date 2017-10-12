@@ -62,9 +62,9 @@ link2.addEventListener('click', secondLink);
 link1.addEventListener('click', thirdLink);
 
 // Nav Mouseovers
-homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = '${joyColors[2]}'; });
-link2.addEventListener('mouseover', function() { this.style.backgroundColor = '${joyColors[2]}'; });
-link1.addEventListener('mouseover', function() { this.style.backgroundColor = '${joyColors[2]}'; });
+homeLink.addEventListener('mouseover', function() { this.style.backgroundColor = '#057287'; });
+link2.addEventListener('mouseover', function() { this.style.backgroundColor = '#057287'; });
+link1.addEventListener('mouseover', function() { this.style.backgroundColor = '#057287'; });
 homeLink.addEventListener('mouseout', function() { this.style.backgroundColor = '#333'; });
 link2.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });
 link1.addEventListener('mouseout', function() { this.style.backgroundColor = '#000'; });

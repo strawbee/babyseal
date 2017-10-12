@@ -22,7 +22,6 @@ a {
 
 a:hover {
   color: #fff;
-  cursor: auto;
 }
 
 #wrapper {
@@ -86,7 +85,7 @@ header {
   line-height: 2em;
   text-align: center;
   cursor: default;
-  overflow: auto;
+  overflow: default;
 }
 
 h1 {
@@ -143,6 +142,7 @@ h2 {
   text-shadow: 2px 2px 4px #057287;
   animation-name: h2-animation;
   animation-duration: 1.5s;
+  animation-delay: 1s;
   transition: transform 1s;
 }
 
