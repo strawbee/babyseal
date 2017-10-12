@@ -113,10 +113,10 @@ nav .tab {
   text-align: center;
 }
 #templatesSection {
-  display: none;
+  display: inline;
 }
 #colorsSection {
-  display: inline;
+  display: none;
 }
 #backgroundsSection {
   display: none;
