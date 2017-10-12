@@ -36,13 +36,13 @@ var joyColors = [ // gradient1, gradient2, shadow
 ];
 
 var sethColors = [ // background, tabs
-  ['#2E7C52', '#73AF8F'],
-  ['#a80606', '#d14747'],
-  ['#c14807', '#efa556'],
-  ['#876c00', '#ceaf00'],
-  ['#006d01', '#009b0f'],
-  ['#004e7f', '#0071b2'],
-  ['#821865', '#a55697'],
+  ['#a88051', '#F9DAB8'],
+  ['#ff4d4d', '#F1C8BF'],
+  ['#f98d53', '#f8dab9'],
+  ['#ffdb4d', '#f8e7b9'],
+  ['#75d776', '#e2ebc7'],
+  ['#4dbbff', '#cadbe8'],
+  ['#e368c2', '#D1C7E9'],
 ];
 
 var jeffColors = [ // gradientA, gradientB
@@ -76,13 +76,13 @@ var jeffAllBackgrounds = [
 ];
 
 var sethAllBackgrounds = [
-  'images/jeff-bgs/default.jpg',
-  'images/jeff-bgs/red.jpg',
-  'images/jeff-bgs/orange.jpg',
-  'images/jeff-bgs/yellow.jpg',
-  'images/jeff-bgs/green.jpg',
-  'images/jeff-bgs/blue.jpg',
-  'images/jeff-bgs/purple.jpg'
+  'images/seth-bgs/default.jpg',
+  'images/seth-bgs/red.jpg',
+  'images/seth-bgs/orange.jpg',
+  'images/seth-bgs/yellow.jpg',
+  'images/seth-bgs/green.jpg',
+  'images/seth-bgs/blue.jpg',
+  'images/seth-bgs/purple.jpg'
 ];
 
 var joyActiveBackground = joyAllBackgrounds[0];
@@ -98,7 +98,7 @@ function applyTemplates(event) {
   localStorage.startAtTemplate = 'true';
   for (var radio = 0; radio < allTemplates.length; radio++) {
     if (possibleTemplates[radio].checked === true) {
-      stylesheets[2].href = allTemplates[radio];
+      stylesheets[1].href = allTemplates[radio];
       localStorage['template'] = allTemplates[radio];
       localStorage.templateStored = 'true';
       window.location.reload('true');
@@ -436,7 +436,7 @@ function backgroundsPrevious() {
 // Checks local storage - if 'templatesStored' is true, then loads it to page. If not, then use default template.
 if (localStorage.templateStored === 'true') {
   activeTemplate = localStorage['template'];
-  stylesheets[2].href = activeTemplate;
+  stylesheets[1].href = activeTemplate;
 } else {
   activeTemplate = allTemplates[0];
 }
@@ -466,8 +466,8 @@ if (localStorage.colorStored) {
     jeffCheckBackground();
   }
 } else {
-  joyStoreColor = jeffColors[0];
-  jeffStoreColor = joyColors[0];
+  joyStoreColor = joyColors[0];
+  jeffStoreColor = jeffColors[0];
   sethStoreColor = sethColors[0];
 }
 

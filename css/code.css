@@ -1,15 +1,147 @@
-#joyHTML {
+@import url("https://fonts.googleapis.com/css?family=Raleway|Source+Code+Pro");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #000;
+  font-family: Raleway, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+pre {
+  font-size: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 15px 0;
+}
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  position: absolute;
+  top: 50px;
+}
+
+h1 {
+  font-size: 2em;
+  text-shadow: 2px 2px 2px #333;
+  color: #fff;
+  font-family: 'Source Code Pro', monospace;
+}
+
+nav {
+  position: absolute;
+  top: 141px;
+  width: 80%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: 20px 35px;
+  font-size: 1.2em;
+  background: #eee;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-left: solid 1px #000;
+  cursor: default;
+}
+
+nav li:first-child {
+  border-left: none;
+  background: #fff;
+}
+
+.output {
+  position: absolute;
+  padding: 30px 40px;
+  text-align: justify;
+  top: 200px;
+  bottom: 50px;
+  width: 80%;
+  background: #fff;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 3px 3px 2px #333;
+  overflow: auto;
+}
+
+.output a {
+  color: darkgray;
+  font-weight: 900;
+  letter-spacing: .05em;
+  font-size: 1.1em;
+}
+
+.output a:hover {
+  color: #333;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-align: right;
+  color: #444;
+}
+
+/* ========================= DISPLAYS ========================== */
+
+#instructionsDiv {
+  display: block;
+}
+
+#htmlOutput {
   display: none;
 }
 
-#sethHTML {
+#cssOutput {
   display: none;
 }
 
-#jeffHTML {
+#jsOutput {
   display: none;
 }
 
-#joyCSS, #jeffCSS, #sethCSS {
+#joyHTML, #sethHTML, #jeffHTML {
+  display: none;
+}
+
+#joyCSS1, #joyCSS2, #jeffCSS, #sethCSS, #joyJS, #jeffJS, #sethJS {
   white-space: pre-wrap;
 }
