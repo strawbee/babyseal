@@ -98,7 +98,7 @@ function applyTemplates(event) {
   localStorage.startAtTemplate = 'true';
   for (var radio = 0; radio < allTemplates.length; radio++) {
     if (possibleTemplates[radio].checked === true) {
-      stylesheets[2].href = allTemplates[radio];
+      stylesheets[1].href = allTemplates[radio];
       localStorage['template'] = allTemplates[radio];
       localStorage.templateStored = 'true';
       window.location.reload('true');
@@ -436,7 +436,7 @@ function backgroundsPrevious() {
 // Checks local storage - if 'templatesStored' is true, then loads it to page. If not, then use default template.
 if (localStorage.templateStored === 'true') {
   activeTemplate = localStorage['template'];
-  stylesheets[2].href = activeTemplate;
+  stylesheets[1].href = activeTemplate;
 } else {
   activeTemplate = allTemplates[0];
 }
