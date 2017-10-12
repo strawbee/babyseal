@@ -8,9 +8,10 @@ var aboutUsSection = document.getElementById('aboutUsSection');
 var homeLink = document.getElementById('homeLink');
 var aboutUsLink = document.getElementById('aboutUsLink');
 var chooseLayoutLink = document.getElementById('chooseLayoutLink');
+var sethHomeLink = document.getElementById('sethHomeLink');
+var sethAboutUsLink = document.getElementById('sethAboutUsLink');
+var sethChooseLayoutLink = document.getElementById('sethChooseLayoutLink');
 var wrapper = document.getElementById('wrapper');
-var activeTab = document.getElementsByClassName(' active');
-var tabContent = document.getElementsByClassName('tabcontent');
 var body = document.querySelector('body');
 var section = document.querySelectorAll('section');
 var joyStoreColor, jeffStoreColor, sethStoreColor;
@@ -60,7 +61,7 @@ var sethActiveBackground = sethAllBackgrounds[0];
 
 var jeffActiveBackground = jeffAllBackgrounds[0];
 
-/* ==================================== TEMPLATES ==================================== */
+/* ==================================== TEMPLATES FUNCTION ==================================== */
 
 // Loops through template radio buttons. If a button is checked, change the stylesheet accordingly and store the value to local storage. Set local storage 'startAtTemplate' and 'templateStored' to true and reload page.
 function applyTemplates(event) {
@@ -77,66 +78,25 @@ function applyTemplates(event) {
   }
 }
 
-// Checks local storage - if 'templatesStored' is true, then loads it to page. If not, then use default template.
-if (localStorage.templateStored === 'true') {
-  activeTemplate = localStorage['template'];
-  stylesheets[2].href = activeTemplate;
-} else {
-  activeTemplate = allTemplates[0];
-}
 
-/* Checks local storage to see if the page should start at template page (after user presses apply template) or at the header page (on reload or new session).
-
-If 'startAtTemplate' is currently true, then sets it to false. That way, when the applyTemplates function is called, it is set to true. If it isn't called, it remains false and the page will load on header instead of templates section. */
-
-if (localStorage.startAtTemplate === 'true') {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-    header.style.display = 'none';
-    templatesSection.style.display = 'block';
-  }
-  localStorage.startAtTemplate = false;
-} else if (localStorage.startAtTemplate === 'false'){
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
-    header.style.display = 'block';
-    templatesSection.style.display = 'none';
-  }
-}
-
-// Apply Templates Event Listener
-document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
-
-
-/* ==================================== NAV AND BUTTONS ==================================== */
-
-// Seth Nav
-function openTab (evt, navTab) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName('tabcontent');
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none';
-  }
-  // Get all elements with class='tablinks' and remove the class 'active'
-  tablinks = document.getElementsByClassName('tablinks');
-  for (i = 0; i < tablinks.length; i++) {
-    // tablinks[i].className = ' ';
-    tablinks[i].className = tablinks[i].className.replace(' active', '');
-    tablinks[i].style.backgroundColor = '#f1f1f1';
-  }
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(navTab).style.display = 'block';
-  evt.currentTarget.style.backgroundColor = sethStoreColor[1];
-  evt.currentTarget.className += ' active';
-  // console.log('color1: ', sethStoreColor[0]);
-  // console.log('color2: ', sethStoreColor[1]);
-  // sethChangeColor(sethStoreColor[0],sethStoreColor[1]);
-}
+/* ================================== NAV AND BUTTONS FUNCTIONS ================================== */
 
 // Nav: Home Link
 function goHome() {
   if (activeTemplate === allTemplates[3]) {
     window.location.href = '#wrapper';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'block';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    sethHomeLink.style.background = sethStoreColor[1];
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethChooseLayoutLink.style.background = '#f1f1f1';
   }
   else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     header.style.display = 'block';
@@ -157,6 +117,18 @@ function aboutUs() {
   if (activeTemplate === allTemplates[3]) {
     window.location.href = '#aboutUsSection';
   }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'block';
+    document.getElementById('navTab3').style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'inline';
+    sethAboutUsLink.style.background = sethStoreColor[1];
+    sethChooseLayoutLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
+  }
   else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     aboutUsSection.style.display = 'block';
     header.style.display = 'none';
@@ -175,6 +147,18 @@ function aboutUs() {
 function loadTemplates() {
   if (activeTemplate === allTemplates[3]) {
     window.location.href = '#templatesSection';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'none';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'block';
+    templatesSection.style.display = 'inline';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    sethChooseLayoutLink.style.background = sethStoreColor[1];
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethHomeLink.style.background = '#f1f1f1';
   }
   else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     templatesSection.style.display = 'block';
@@ -238,22 +222,12 @@ function backgroundsPrevious() {
   }
 }
 
-// Navigation Event Listeners
-homeLink.addEventListener('click', goHome);
-aboutUsLink.addEventListener('click', aboutUs);
-chooseLayoutLink.addEventListener('click', loadTemplates);
-document.getElementById('headerNext').addEventListener('click', loadTemplates);
-document.getElementById('templatesNextButton').addEventListener('click', templatesNext);
-document.getElementById('colorsPreviousButton').addEventListener('click', colorsPrevious);
-document.getElementById('colorsNextButton').addEventListener('click', colorsNext);
-document.getElementById('backgroundsPreviousButton').addEventListener('click', backgroundsPrevious);
-document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
 
-/* ==================================== Colors & Backgrounds ==================================== */
 
+
+/* =============================== COLORS & BACKGROUND FUNCTIONS =============================== */
 
 // Global function to call upon clicking apply colors
-
 function applyColors(event) {
   event.preventDefault();
   var possibleColors = document.getElementsByName('colorsRadioButton');
@@ -432,14 +406,10 @@ function joyChangeColor(gradient1, gradient2, shadow) {
 
 function sethChangeColor(background, tabs) {
   body.style.backgroundColor = background;
-  // console.log('Active Tab: ', document.getElementById('activeTab'));
   document.getElementById('navTab1').style.backgroundColor = tabs;
   document.getElementById('navTab2').style.backgroundColor = tabs;
   document.getElementById('navTab3').style.backgroundColor = tabs;
-  // document.getElementsByClassName('tablinks active').style.backgroundColor = sethStoreColor[1];
-  // console.log('tablinks Tab: ', document.getElementsByClassName('tablinks'));
-  // document.getElementsByClassName('tablinks').style.backgroundColor = '#f1f1f1';
-  // document.getElementById('deadTab').style.backgroundColor = '#f1f1f1';
+  sethChooseLayoutLink.style.background = tabs;
 }
 
 function jeffChangeColor(gradientA, gradientB) {
@@ -546,6 +516,19 @@ function jeffCheckBackground() {
     jeffYesBackground();
   } else { jeffNoBackground(); }
 }
+
+
+
+/* =============================== STUFF THAT HAPPENS WHEN PAGE LOADS =============================== */
+
+// Checks local storage - if 'templatesStored' is true, then loads it to page. If not, then use default template.
+if (localStorage.templateStored === 'true') {
+  activeTemplate = localStorage['template'];
+  stylesheets[2].href = activeTemplate;
+} else {
+  activeTemplate = allTemplates[0];
+}
+
 // Pulls stored colors and backgrounds for each template from local storage, and applies the correct color function depending on which template is active
 if (localStorage.colorStored) {
   joyStoreColor = JSON.parse(localStorage['joyColors']);
@@ -566,9 +549,66 @@ if (localStorage.colorStored) {
     jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
     jeffCheckBackground();
   }
+} else {
+  joyStoreColor = ['#4ec3d8', '#07a4c1', '#057287'];
+  jeffStoreColor = ['#49494C', '#666F78'];
+  sethStoreColor = ['#2E7C52', '#73AF8F'];
 }
 
-// Colors Event Listeners
+/* Checks local storage to see if the page should start at template page (after user presses apply template) or at the header page (on reload or new session).
+
+If 'startAtTemplate' is currently true, then sets it to false. That way, when the applyTemplates function is called, it is set to true. If it isn't called, it remains false and the page will load on header instead of templates section. */
+
+if (localStorage.startAtTemplate === 'true') {
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    header.style.display = 'none';
+    templatesSection.style.display = 'block';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    sethChooseLayoutLink.style.background = sethStoreColor[1];
+  }
+  localStorage.startAtTemplate = false;
+} else if (localStorage.startAtTemplate === 'false'){
+  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+    header.style.display = 'block';
+    templatesSection.style.display = 'none';
+  }
+  else if (activeTemplate === allTemplates[2]) {
+    document.getElementById('navTab1').style.display = 'block';
+    document.getElementById('navTab2').style.display = 'none';
+    document.getElementById('navTab3').style.display = 'none';
+    templatesSection.style.display = 'none';
+    colorsSection.style.display = 'none';
+    backgroundsSection.style.display = 'none';
+    aboutUsSection.style.display = 'none';
+    sethHomeLink.style.background = sethStoreColor[1];
+    sethAboutUsLink.style.background = '#f1f1f1';
+    sethChooseLayoutLink.style.background = '#f1f1f1'; }
+}
+
+
+
+/* ==================================== EVENT LISTENERS ==================================== */
+
+// Navigation Event Listeners
+homeLink.addEventListener('click', goHome);
+aboutUsLink.addEventListener('click', aboutUs);
+chooseLayoutLink.addEventListener('click', loadTemplates);
+sethHomeLink.addEventListener('click', goHome);
+sethAboutUsLink.addEventListener('click', aboutUs);
+sethChooseLayoutLink.addEventListener('click', loadTemplates);
+document.getElementById('headerNext').addEventListener('click', loadTemplates);
+document.getElementById('templatesNextButton').addEventListener('click', templatesNext);
+document.getElementById('colorsPreviousButton').addEventListener('click', colorsPrevious);
+document.getElementById('colorsNextButton').addEventListener('click', colorsNext);
+document.getElementById('backgroundsPreviousButton').addEventListener('click', backgroundsPrevious);
+document.getElementById('getCodeButton').addEventListener('click', function() { window.open('code.html', '_blank'); });
+
+// Apply Templates Event Listener
+document.getElementById('templatesForm').addEventListener('submit', applyTemplates);
+
+// Apply Colors Event Listeners
 document.getElementById('colorsForm').addEventListener('submit', applyColors);
-// Backgrounds Event Listeners
+
+// Apply Background Event Listeners
 backgroundsForm.addEventListener('submit', applyBackgrounds);
