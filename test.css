@@ -22,7 +22,6 @@ a {
 
 a:hover {
   color: #fff;
-  cursor: default;
 }
 
 p {
@@ -35,9 +34,9 @@ p {
   left: 0;
   min-height: 100vh;
   min-width: 100vw;
-  background: linear-gradient(${joyColors[0]}, ${joyColors[1]}) fixed;
-  background-attachment: fixed;
+  background: linear-gradient(#4ec3d8, #07a4c1) fixed;
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +47,9 @@ p {
 nav {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  height: 100%;
+  width: 260px;
   background: #000;
   text-align: center;
   box-shadow: 0 3px 1px #222;
@@ -59,11 +60,13 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 nav li {
-  display: inline-block;
-  padding: 30px 45px;
+  padding: 30px 71px;
   background: #000;
   font-size: 1.2em;
   text-shadow: 2px 2px 2px #333;
@@ -71,18 +74,14 @@ nav li {
 }
 
 nav li:hover {
-  background: ${joyColors[2]};
-  cursor: auto;
-}
-
-#link1 {
-  background: #333;
+  background: #057287;
+  cursor: default;
 }
 
 header {
   display: block;
-  margin: 110px 50px 80px 50px;
-  padding: 40px;
+  margin: 30px 30px 30px 290px;
+  padding: 30px;
   line-height: 2em;
   text-align: center;
   cursor: default;
@@ -92,7 +91,7 @@ header {
 h1 {
   font-size: 3em;
   font-weight: 900;
-  text-shadow: 2px 2px 4px ${joyColors[2]};
+  text-shadow: 3px 3px 3px #057287;
   padding: 10px 30px 30px 30px;
   animation-name: h1-animation;
   animation-duration: 3s;
@@ -110,7 +109,7 @@ h1:hover {
 }
 
 header p {
-  text-shadow: 2px 2px 3px ${joyColors[2]};
+  text-shadow: 2px 2px 3px #057287;
   margin: 20px;
 }
 
@@ -118,26 +117,29 @@ header p a:hover {
   cursor: auto;
 }
 
+
 section {
   position: relative;
-  margin: 110px 50px 80px 50px;
-  padding: 40px 50px;
+  margin: 30px 30px 30px 290px;
+  padding: 30px;
   line-height: 2em;
-  text-shadow: 1px 1px 3px ${joyColors[2]};
+  text-shadow: 1px 1px 3px #057287;
   overflow: auto;
   border-radius: 20px;
   opacity: 1.0;
   text-align: justify;
 }
 
+
 h2 {
   font-size: 3em;
   font-weight: 900;
   text-align: center;
   padding-bottom: 40px;
-  text-shadow: 2px 2px 4px ${joyColors[2]};
+  text-shadow: 2px 2px 4px #057287;
   animation-name: h2-animation;
   animation-duration: 1.5s;
+  animation-delay: 1s;
   transition: transform 1s;
 }
 
@@ -200,26 +202,31 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #000;
+  background: #222;
   text-align: center;
-  color: #8c8c8c;
+  color: #fff;
   text-shadow: 1px 1px 1px #333;
-  box-shadow: 0 -2px 1px #333;
-  padding: 20px;
+  box-shadow: 0 -1px 2px #333;
+  padding: 20px 20px 20px 310px;
   z-index: 1;
-  transition: color 1s;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 footer:hover {
   cursor: default;
-  color: #fff;
+  opacity: 1;
 }
 
 #link1Section, #link2Section {
   display: none;
 }
 
+#homeLink {
+  background: #333;
+}
+
 @keyframes slide-down {
   from { margin-top: -100%; }
-  to { margin-top: 110px; }
+  to { margin-top: 30px; }
 }

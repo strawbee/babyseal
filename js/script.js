@@ -466,8 +466,8 @@ if (localStorage.colorStored) {
     jeffCheckBackground();
   }
 } else {
-  joyStoreColor = jeffColors[0];
-  jeffStoreColor = joyColors[0];
+  joyStoreColor = joyColors[0];
+  jeffStoreColor = jeffColors[0];
   sethStoreColor = sethColors[0];
 }
 
