@@ -135,7 +135,10 @@ function openTab (evt, navTab) {
 
 // Nav: Home Link
 function goHome() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#wrapper';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     header.style.display = 'block';
     templatesSection.style.display = 'none';
     colorsSection.style.display = 'none';
@@ -147,15 +150,14 @@ function goHome() {
     aboutUsLink.style.backgroundColor = '';
     chooseLayoutLink.style.backgroundColor = '';
   }
-
-  // if (activeTemplate === allTemplates[2]) {
-  //
-  // }
 }
 
 // Nav: About Us Link
 function aboutUs() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#aboutUsSection';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     aboutUsSection.style.display = 'block';
     header.style.display = 'none';
     templatesSection.style.display = 'none';
@@ -171,7 +173,10 @@ function aboutUs() {
 
 // Nav: Choose Layout Link
 function loadTemplates() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#templatesSection';
+  }
+  else if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1]) {
     templatesSection.style.display = 'block';
     header.style.display = 'none';
     colorsSection.style.display = 'none';
@@ -187,7 +192,9 @@ function loadTemplates() {
 
 // Button: going to colors section from the templates section
 function templatesNext() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#colorsSection';
+  } else {
     colorsSection.style.display = 'block';
     templatesSection.style.display = 'none';
     colorsSection.style.animationName = 'slide-down';
@@ -197,7 +204,9 @@ function templatesNext() {
 
 // Button: going back to templates section from color section
 function colorsPrevious() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#templatesSection';
+  } else {
     templatesSection.style.display = 'block';
     colorsSection.style.display = 'none';
     templatesSection.style.animationName = 'slide-down';
@@ -207,7 +216,9 @@ function colorsPrevious() {
 
 // Button: going to backgrounds section from color section
 function colorsNext() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#backgroundsSection';
+  } else {
     colorsSection.style.display = 'none';
     backgroundsSection.style.display = 'block';
     backgroundsSection.style.animationName = 'slide-down';
@@ -217,7 +228,9 @@ function colorsNext() {
 
 // Button: going from backgrounds section back to color section
 function backgroundsPrevious() {
-  if (activeTemplate === allTemplates[0] || activeTemplate === allTemplates[1] || activeTemplate[2]) {
+  if (activeTemplate === allTemplates[3]) {
+    window.location.href = '#colorsSection';
+  } else {
     colorsSection.style.display = 'block';
     backgroundsSection.style.display = 'none';
     colorsSection.style.animationName = 'slide-down';
@@ -419,13 +432,7 @@ function joyChangeColor(gradient1, gradient2, shadow) {
 
 function sethChangeColor(background, tabs) {
   body.style.backgroundColor = background;
-  var tablinks = document.getElementsByClassName('tablinks');
-  for (var i = 0; i < tablinks.length; i++) {
-    // tablinks[i].className = ' ';
-    tablinks[i].className = tablinks[i].className.replace(' active', '');
-    tablinks[i].style.backgroundColor = '#f1f1f1';
-  }
-  document.getElementById('activeTab').style.backgroundColor = tabs;
+  // console.log('Active Tab: ', document.getElementById('activeTab'));
   document.getElementById('navTab1').style.backgroundColor = tabs;
   document.getElementById('navTab2').style.backgroundColor = tabs;
   document.getElementById('navTab3').style.backgroundColor = tabs;
