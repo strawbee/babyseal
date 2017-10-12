@@ -276,6 +276,16 @@ input:focus {
   text-align: justify;
 }
 
+#aboutUsSection p {
+  margin-bottom: 25px;
+}
+
+#aboutUsSection img {
+  float: left;
+  margin-right: 20px;
+}
+
+
 footer {
   position: fixed;
   bottom: 0;
