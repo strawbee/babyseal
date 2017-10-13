@@ -141,8 +141,7 @@ h2 {
   padding: 10px 0 40px 0;
   text-shadow: 2px 2px 4px #057287;
   animation-name: h2-animation;
-  animation-duration: 1.5s;
-  animation-delay: 1s;
+  animation-duration: 2.5s;
   transition: transform 1s;
 }
 
@@ -158,7 +157,7 @@ h2:hover {
 img {
   border: solid 3px #fff;
   border-radius: 5px;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: opacity 1s;
 }
 
@@ -274,6 +273,18 @@ input:focus {
 
 #aboutUsSection {
   text-align: justify;
+}
+
+#aboutUsSection p {
+  margin-bottom: 25px;
+}
+
+#aboutUsSection img {
+  float: left;
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.9;
 }
 
 footer {
