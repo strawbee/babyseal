@@ -215,8 +215,7 @@ if (joyTemplate1) {
     padding-bottom: 40px;
     text-shadow: 2px 2px 4px ${joyColors[2]};
     animation-name: h2-animation;
-    animation-duration: 1.5s;
-    animation-delay: 1s;
+    animation-duration: 2.5s;
     transition: transform 1s;
   }
 
@@ -452,8 +451,7 @@ else if (joyTemplate2) {
     padding-bottom: 40px;
     text-shadow: 2px 2px 4px ${joyColors[2]};
     animation-name: h2-animation;
-    animation-duration: 1.5s;
-    animation-delay: 1s;
+    animation-duration: 2.5s;
     transition: transform 1s;
   }
 
