@@ -273,7 +273,7 @@ function jeffYesBackground() {
 }
 
 function jeffNoBackground() {
-  jeffChangeColor(jeffStoreColor[0], jeffStoreColor[1]);
+  jeffChangeColor(jeffStoreColor);
 }
 
 function jeffCheckBackground() {
