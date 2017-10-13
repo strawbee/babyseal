@@ -84,20 +84,34 @@ section {
 }
 
 
-#aboutUsSection {
+#link2Section {
   border-radius: 25px;
   margin-top: 20px;
 }
 
-#templatesSection {
+#link2Section p {
+  margin-bottom: 25px;
+}
+
+#link2Section img {
+  float: left;
+  margin-right: 20px;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+}
+
+#wrapper {
+  margin: 50px auto 0 auto;
+  width: 720px;
+}
+
+#link1Section {
   border-radius: 25px;
   margin-top: 20px;
   text-align: left;
 }
 
-#templatesInstructions {
-  text-align: center;
-}
 
 button {
   padding: 10px;
@@ -114,22 +128,6 @@ button:hover {
   transform: translate(-1px, -1px)
 }
 
-#templatesForm {
-  padding: 2%;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-#colorsSection {
-  border-radius: 25px;
-  margin-top: 20px;
-}
-
-#colorsInstructions {
-  text-align: center;
-}
 
 img {
   vertical-align: middle;
@@ -143,77 +141,6 @@ img:hover {
   transform: translate(-1px, -1px)
 }
 
-.pageBottomButtons {
-  text-align: center;
-}
-
-#backgroundsSection {
-  border-radius: 25px;
-  margin-top: 20px;
-}
-
-#backgroundsInstructions {
-  text-align: center;
-}
-
-
-.defaultColor {
-  color: #454C52;
-  margin-right: 82%;
-  margin-left: 3px;
-  font-weight: 900;
-
-}
-
-.red {
-  color: #BB0000;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-
-}
-
-.orange {
-  color: #D14800;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-
-}
-
-.yellow {
-  color: #FFE100;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-
-}
-
-.green {
-  color: #008705;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-}
-
-.blue {
-  color: #3D5091;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-}
-
-.purple {
-  color: #680078;
-  margin-right: 10px;
-  margin-left: 3px;
-  font-weight: 900;
-}
-
-.defaultColor:hover, .red:hover, .orange:hover, .yellow:hover, .green:hover, .blue:hover, .purple:hover {
-  color: #000;
-}
-
 footer {
   clear: both;
   display: block;
@@ -221,12 +148,4 @@ footer {
   width: 421px;
   text-align: center;
   color: #fff;
-}
-
-.tab {
-  display: none;
-}
-
-#navTab1 {
-  display: none;
 }

@@ -544,6 +544,7 @@ else if (joyTemplate2) {
   }
   `;
 }
+
 else if (sethTemplate) {
   cssH3.textContent = 'Template 3 (Folders)';
   document.getElementById('sethCSS').textContent = `
@@ -700,6 +701,163 @@ else if (sethTemplate) {
   `;
 }
 
+else if (jeffTemplate) {
+  cssH3.textContent = 'Template 4 (Fixed Width Scroll)';
+  document.getElementById('jeffCSS').textContent = `
+    @import url("https://fonts.googleapis.com/css?family=Raleway");
+
+    html {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: ${jeffActiveBackground};
+      font-family: Raleway;
+      line-height: 2em;
+      margin: auto;
+    }
+
+    #wrapper {
+      margin: 50px auto 0 auto;
+      width: 720px;
+    }
+
+    header {
+      display: inline-block;
+      float: left;
+      font-size: 22px;
+      padding: 10px;
+      text-align: center;
+      width: 71%;
+      color: white;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 1px #630e0e;
+    }
+
+    #headerInstructions {
+      text-shadow: 0 0 1px #630e0e;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: white;
+      padding: 5px;
+      border-radius: 7px;
+      font-weight: 900;
+      font-size: 0.9em;
+    }
+
+    a:hover {
+      box-shadow: 2px 2px 2px #000;
+      background: #eee;
+    }
+
+    nav {
+      display: inline-block;
+      float: right;
+      font-size: 17px;
+      margin-top: 20px;
+      padding-left: 5px;
+      width: 26%;
+      color: white;
+    }
+
+    nav ul li {
+      padding: 5px;
+    }
+
+    section {
+      background: white;
+      display: inline-block;
+      float: left;
+      padding: 15px 10px;
+      width: 70%;
+      text-align: justify;
+    }
+
+     h2 {
+       font-size: 2em;
+       text-align: center;
+    }
+
+
+    #link2Section {
+      border-radius: 25px;
+      margin-top: 20px;
+    }
+
+    #link2Section p {
+      margin-bottom: 25px;
+    }
+
+    #link2Section img {
+      float: left;
+      margin-right: 20px;
+      width: 150px;
+      height: 150px;
+      border: solid 1px;
+    }
+
+    #wrapper {
+      margin: 50px auto 0 auto;
+      width: 720px;
+    }
+
+    #link1Section {
+      border-radius: 25px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+
+    button {
+      padding: 10px;
+      margin: 15px 5px;
+      background: #fff;
+      border: solid 3px #000;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button:hover {
+      box-shadow: 2px 2px 2px #000;
+      background: #eee;
+      transform: translate(-1px, -1px)
+    }
+
+
+    img {
+      vertical-align: middle;
+      margin: 0 10px 10px 3px;
+      border: solid 1px black;
+      border-radius: 5px;
+    }
+
+    img:hover {
+      box-shadow: 2px 2px 2px #000;
+      transform: translate(-1px, -1px)
+    }
+
+    footer {
+      clear: both;
+      display: block;
+      padding: 50px;
+      width: 421px;
+      text-align: center;
+      color: #fff;
+    }
+  `;
+}
+
 /* ============================== OUTPUTS RELEVANT JAVASCRIPT CODE ============================== */
 
 if (joyTemplate) {
@@ -779,7 +937,7 @@ if (joyTemplate) {
 }
 
 
-if (sethTemplate) {
+else if (sethTemplate) {
   jsH3.textContent = 'Template 3 (Folders)'
   document.getElementById('sethJS').textContent = `
 
@@ -830,8 +988,10 @@ if (sethTemplate) {
 `;
 }
 
-
-
+else if (jeffTemplate) {
+  jsH3.textContent = 'Template 4 (Fixed Width Scroll)'
+  document.getElementById('jeffJS').textContent = 'There is no JavaScript for this layout. You\'re welcome.';
+}
 
 /* ========================= FUNCTIONS AND EVENT LISTENERS FOR CODE.HTML ========================= */
 
