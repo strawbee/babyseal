@@ -1,6 +1,6 @@
 /*Style Sheet of Template #3 */
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 body {
   font-family: Raleway, sans-serif;
   background-color: #a88051;
@@ -13,9 +13,7 @@ body {
 
 header {
   font-size: 35px;
-  /*margin: auto;*/
   padding: 20px;
-  /*text-align: left;*/
   height: 40px;
   background-color: #001409;
   color: #DDEDE5;
@@ -31,9 +29,6 @@ h1 {
   padding-top: 10px;
   position: absolute;
   left: -300px;
-  /*width: auto;
-  height: 40px;*/
-  /*background: blue;*/
   -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: .25s;
   animation: slide 0.5s forwards;
@@ -60,7 +55,6 @@ nav {
 /* Style the tab */
 nav .tab {
   display: inline-block;
-  /*overflow: hidden;*/
   margin: 0 0 -3px 0;
 }
 
@@ -271,13 +265,9 @@ form button {
 form button:hover {
   border-color: #f1f1f1;
   background: #ccc;
-  /*color: #fff;*/
   box-shadow: 4px 4px 4px #222;
 }
 
-/*form button:focus {
-  outline: 0;
-}*/
 .pageBottomButtons {
   text-align: right;
   margin: 20px;

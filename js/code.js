@@ -554,7 +554,7 @@ else if (sethTemplate) {
   document.getElementById('sethCSS').textContent = `
   /*Style Sheet of Folders Template */
   @import url("https://fonts.googleapis.com/css?family=Raleway");
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
   body {
     font-family: Raleway, sans-serif;
     background-color: ${sethActiveBackground}
@@ -572,7 +572,7 @@ else if (sethTemplate) {
     background-color: #001409;
     color: #DDEDE5;
     box-shadow: 0px 3px 3px 3px rgba(10, 10, 10, .8);
-    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 900;
   }
 
   h1 {
@@ -615,6 +615,7 @@ else if (sethTemplate) {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
+
   /* Style the buttons inside the tab */
   .tab button {
     font-size: 20px;
@@ -633,10 +634,12 @@ else if (sethTemplate) {
     border-bottom-width: 3px;
     border-bottom-color: #ccc;
   }
+
   /* Change background color of buttons on hover */
   .tab button:hover {
       background-color: #a9a9a9;
   }
+
   /* Create an active/current tablink class */
   .tab button.active {
       background-color: ${sethColors[1]};
@@ -653,6 +656,7 @@ else if (sethTemplate) {
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
   }
+
   /*Display on Default*/
   #navTab1 {
     display: block;
@@ -666,10 +670,12 @@ else if (sethTemplate) {
       -webkit-animation: fadeEffect 1.5s;
       animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
   }
+
   @-webkit-keyframes fadeEffect {
       from {opacity: 0;}
       to {opacity: 1;}
   }
+
   @keyframes fadeEffect {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -837,7 +843,6 @@ else if (jeffTemplate) {
       background: #eee;
       transform: translate(-1px, -1px)
     }
-
 
     img {
       vertical-align: middle;
