@@ -56,7 +56,7 @@ if (localStorage.backgroundStored === 'true') {
   jeffActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['jeffBackground'] + '\');';
 } else {
   joyActiveBackground = 'linear-gradient(' + joyColors[0] + ', ' + joyColors[1] + ') fixed;';
-  sethActiveBackground = sethColors[0];
+  sethActiveBackground = sethColors[0] + ';';
   jeffActiveBackground = 'linear-gradient(' + jeffColors[0] + ', ' + jeffColors[1] + ') fixed;';
 }
 
