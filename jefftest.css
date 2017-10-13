@@ -89,23 +89,6 @@ section {
   margin-top: 20px;
 }
 
-#aboutUsSection p {
-  margin-bottom: 25px;
-}
-
-#aboutUsSection img {
-  float: left;
-  margin-right: 20px;
-  width: 150px;
-  height: 150px;
-  border: solid 1px;
-}
-
-#wrapper {
-  margin: 50px auto 0 auto;
-  width: 720px;
-}
-
 #templatesSection {
   border-radius: 25px;
   margin-top: 20px;
@@ -114,11 +97,6 @@ section {
 
 #templatesInstructions {
   text-align: center;
-}
-
-#templatesSection img {
-  width: 200px;
-  height: 200px;
 }
 
 button {
