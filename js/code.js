@@ -36,7 +36,7 @@ var cssOutput = document.getElementById('cssOutput');
 var jsOutput = document.getElementById('jsOutput');
 var cssH3 = document.getElementById('cssH3');
 var jsH3 = document.getElementById('jsH3');
-var activeTemplate, joyActiveBackground, sethActiveBackground, jeffActiveBackground;
+var activeTemplate, joyActiveBackground, sethActiveBackground, jeffActiveBackground, joyBackgroundOpacity, joySectionBackground;
 
 /* =============================== CHECKING LOCAL STORAGE =============================== */
 
@@ -52,10 +52,14 @@ if (localStorage.colorStored === 'true') {
 
 if (localStorage.backgroundStored === 'true') {
   joyActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['joyBackground'] + '\');';
+  joyBackgroundOpacity = '0.8;';
+  joySectionBackground = '#000;';
   sethActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['sethBackground'] + '\');';
   jeffActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['jeffBackground'] + '\');';
 } else {
   joyActiveBackground = 'linear-gradient(' + joyColors[0] + ', ' + joyColors[1] + ') fixed;';
+  joyBackgroundOpacity = '1.0;';
+  joySectionBackground = 'inherit;';
   sethActiveBackground = sethColors[0];
   jeffActiveBackground = 'linear-gradient(' + jeffColors[0] + ', ' + jeffColors[1] + ') fixed;';
 }
@@ -204,7 +208,8 @@ if (joyTemplate1) {
     text-shadow: 1px 1px 3px ${joyColors[2]};
     overflow: auto;
     border-radius: 20px;
-    opacity: 1.0;
+    opacity: ${joyBackgroundOpacity};
+    background: ${joySectionBackground};
     text-align: justify;
   }
 
@@ -430,7 +435,6 @@ else if (joyTemplate2) {
     cursor: auto;
   }
 
-
   section {
     position: relative;
     margin: 30px 30px 30px 290px;
@@ -439,10 +443,10 @@ else if (joyTemplate2) {
     text-shadow: 1px 1px 3px ${joyColors[2]};
     overflow: auto;
     border-radius: 20px;
-    opacity: 1.0;
+    opacity: ${joyBackgroundOpacity};
+    background: ${joySectionBackground};
     text-align: justify;
   }
-
 
   h2 {
     font-size: 3em;

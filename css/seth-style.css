@@ -20,7 +20,7 @@ header {
   background-color: #001409;
   color: #DDEDE5;
   box-shadow: 0px 3px 3px 3px rgba(10, 10, 10, .8);
-  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
 }
 
 #headerInstructions, #headerNext {
@@ -28,29 +28,35 @@ header {
 }
 
 h1 {
-    position: absolute;
-    left: -300px;
-    /*width: auto;
-    height: 40px;*/
-    /*background: blue;*/
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: .25s;
-    animation: slide 0.5s forwards;
-    animation-delay: .5s;
+  padding-top: 10px;
+  position: absolute;
+  left: -300px;
+  /*width: auto;
+  height: 40px;*/
+  /*background: blue;*/
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: .25s;
+  animation: slide 0.5s forwards;
+  animation-delay: .5s;
 }
+
 h2 {
   margin: 20px;
 }
+
 @-webkit-keyframes slide {
     100% { left: 0; }
 }
+
 @keyframes slide {
     100% { left: 50%; }
 }
+
 nav {
   margin: 50px 0 0 5%;
   width: 90%;
 }
+
 /* Style the tab */
 nav .tab {
   display: inline-block;
@@ -66,6 +72,11 @@ nav .tab {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+button:focus {
+  outline: 0;
+}
+
 /* Style the buttons inside the tab */
 .tab button {
   font-size: 20px;
@@ -84,15 +95,18 @@ nav .tab {
   border-bottom-width: 3px;
   border-bottom-color: #ccc;
 }
+
 /* Change background color of buttons on hover */
 .tab button:hover {
     background-color: #a9a9a9;
 }
+
 /* Create an active/current tablink class */
 .tab button.active {
     background-color: #a88051;
     border-bottom-color: #F9DAB8;
 }
+
 /* Style the tab content */
 .tabcontent {
   font-size: 18px;
@@ -104,21 +118,26 @@ nav .tab {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 /*Display on Default*/
 #navTab3 {
   display: block;
 }
+
 nav > ul {
   display: none;
 }
+
 .tabcontent {
     -webkit-animation: fadeEffect 1.5s;
     animation: fadeEffect 1.5s; /* Fading effect takes 1 second */
 }
+
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -216,7 +235,7 @@ nav > ul {
 
 #aboutUsSection p {
   margin-bottom: 25px;
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 #aboutUsSection img {
@@ -225,6 +244,10 @@ nav > ul {
   width: 150px;
   height: 150px;
   border: solid 1px;
+}
+
+#navTab1 {
+  line-height: 1.8em;
 }
 
 .nowrap {
@@ -251,6 +274,7 @@ form button:hover {
   /*color: #fff;*/
   box-shadow: 4px 4px 4px #222;
 }
+
 /*form button:focus {
   outline: 0;
 }*/
@@ -258,6 +282,7 @@ form button:hover {
   text-align: right;
   margin: 20px;
 }
+
 footer {
   font-size: 18px;
   text-align: center;

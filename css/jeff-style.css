@@ -136,6 +136,10 @@ button:hover {
   transform: translate(-1px, -1px)
 }
 
+button:focus {
+  outline: 0;
+}
+
 #templatesForm {
   padding: 2%;
 }
@@ -178,13 +182,11 @@ img:hover {
   text-align: center;
 }
 
-
 .defaultColor {
   color: #454C52;
   margin-right: 82%;
   margin-left: 3px;
   font-weight: 900;
-
 }
 
 .red {
@@ -192,7 +194,6 @@ img:hover {
   margin-right: 10px;
   margin-left: 3px;
   font-weight: 900;
-
 }
 
 .orange {
@@ -200,7 +201,6 @@ img:hover {
   margin-right: 10px;
   margin-left: 3px;
   font-weight: 900;
-
 }
 
 .yellow {
@@ -208,7 +208,6 @@ img:hover {
   margin-right: 10px;
   margin-left: 3px;
   font-weight: 900;
-
 }
 
 .green {
