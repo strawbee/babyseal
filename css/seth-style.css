@@ -228,7 +228,7 @@ nav > ul {
 }
 
 #aboutUsSection p {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   line-height: 1.5em;
 }
 
@@ -238,6 +238,11 @@ nav > ul {
   width: 150px;
   height: 150px;
   border: solid 1px;
+}
+
+address {
+  font-size: 1.5em;
+  font-weight: 900;
 }
 
 #navTab1 {

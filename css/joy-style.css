@@ -24,6 +24,11 @@ a:hover {
   color: #fff;
 }
 
+address {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
 #wrapper {
   position: absolute;
   top: 0;
@@ -276,7 +281,7 @@ input:focus {
 }
 
 #aboutUsSection p {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 #aboutUsSection img {

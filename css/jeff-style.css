@@ -87,6 +87,7 @@ section {
 #aboutUsSection {
   border-radius: 25px;
   margin-top: 20px;
+  text-align: left;
 }
 
 #aboutUsSection p {
@@ -99,6 +100,11 @@ section {
   width: 150px;
   height: 150px;
   border: solid 1px;
+}
+
+address {
+  font-size: 1.3em;
+  font-weight: 900;
 }
 
 #wrapper {
