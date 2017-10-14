@@ -460,11 +460,11 @@ if (localStorage.colorStored) {
     joyChangeColor(joyStoreColor);
     joyCheckBackground();
   }
-  if (sethTemplate) {
+  else if (sethTemplate) {
     sethChangeColor(sethStoreColor);
     sethCheckBackground();
   }
-  if (jeffTemplate) {
+  else if (jeffTemplate) {
     jeffChangeColor(jeffStoreColor);
     jeffCheckBackground();
   }
@@ -472,6 +472,12 @@ if (localStorage.colorStored) {
   joyStoreColor = joyColors[0];
   jeffStoreColor = jeffColors[0];
   sethStoreColor = sethColors[0];
+  joyActiveBackground = joyAllBackgrounds[0];
+  jeffActiveBackground = jeffAllBackgrounds[0];
+  sethActiveBackground = sethAllBackgrounds[0];
+  if (joyTemplate) { joyCheckBackground(); }
+  else if (sethTemplate) {sethCheckBackground(); }
+  else if (jeffTemplate) {jeffCheckBackground(); }
 }
 
 /* Checks local storage to see if the page should start at template page (after user presses apply template) or at the header page (on reload or new session).
