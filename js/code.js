@@ -51,11 +51,11 @@ if (localStorage.colorStored === 'true') {
 }
 
 if (localStorage.backgroundStored === 'true') {
-  joyActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['joyBackground'] + '\');';
+  joyActiveBackground = 'url(\'background.jpg\');';
   joyBackgroundOpacity = '0.8;';
   joySectionBackground = '#000;';
-  sethActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['sethBackground'] + '\');';
-  jeffActiveBackground = 'url(\'https://raw.githubusercontent.com/strawbee/babyseal/master/' + localStorage['jeffBackground'] + '\');';
+  sethActiveBackground = 'url(\'background.jpg\');';
+  jeffActiveBackground = 'url(\'background.png\');';
 } else {
   joyActiveBackground = 'linear-gradient(' + joyColors[0] + ', ' + joyColors[1] + ') fixed;';
   joyBackgroundOpacity = '1.0;';
@@ -81,6 +81,16 @@ if (joyTemplate) {
 }
 
 /* =============================== OUTPUTS RELEVANT CSS CODE =============================== */
+
+if (jeffTemplate) {
+  document.getElementById('yesBackground').innerHTML = `3. Please save the image at <a href="https://raw.githubusercontent.com/strawbee/babyseal/master/${localStorage.jeffBackground}" target="_blank" alt="background image">this link</a> (pops up in new window) and rename it to <span style="text-deocration:underline">background.png</span>.`;
+}
+else if (sethTemplate) {
+  document.getElementById('yesBackground').innerHTML = `3. Please save the image at <a href="https://raw.githubusercontent.com/strawbee/babyseal/master/${localStorage.sethBackground}" target="_blank" alt="background image">this link</a> (pops up in new window) and rename it to <span style="text-deocration:underline">background.jpg</span>.`;
+}
+else if (joyTemplate) {
+  document.getElementById('yesBackground').innerHTML = `3. Please save the image at <a href="https://raw.githubusercontent.com/strawbee/babyseal/master/${localStorage.joyBackground}" target="_blank" alt="background image">this link</a> (pops up in new window) and rename it to <span style="text-decoration:underline">background.jpg</span>.`;
+}
 
 if (joyTemplate1) {
   cssH3.textContent = 'Template 1 (Top Nav Fixed)';
