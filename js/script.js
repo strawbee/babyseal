@@ -476,8 +476,8 @@ if (localStorage.colorStored) {
   jeffActiveBackground = jeffAllBackgrounds[0];
   sethActiveBackground = sethAllBackgrounds[0];
   if (joyTemplate) { joyCheckBackground(); }
-  else if (sethTemplate) {sethCheckBackground(); }
-  else if (jeffTemplate) {jeffCheckBackground(); }
+  else if (sethTemplate) { sethCheckBackground(); }
+  else if (jeffTemplate) { jeffCheckBackground(); }
 }
 
 /* Checks local storage to see if the page should start at template page (after user presses apply template) or at the header page (on reload or new session).
